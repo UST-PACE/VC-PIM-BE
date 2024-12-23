@@ -1,0 +1,27 @@
+{
+  "objects": [
+    {
+      "id": "request",
+      "definition": {
+        "principalUpc": "CODE",
+        "storeLocationFromId": 1
+      }
+    },
+    {
+      "id": "inventoryProduct",
+      "definition": {
+        "upcMasterModel": {
+          "upcMasterId": 1
+        }
+      }
+    },
+    {
+      "id": "inventoryTransfer",
+      "definition": {
+        "upcMaster": {},
+        "storeLocationFrom": {},
+        "storeLocationTo": {}
+      }
+    }
+  ]
+}

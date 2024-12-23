@@ -1,0 +1,23 @@
+{
+  "objects": [
+    {
+      "id": "inventory",
+      "definition": {
+        "inventoryId": 1,
+        "qty": 50,
+        "upcMaster": {
+          "upcMasterId": 1,
+          "productTypeSellingUnit": {
+            "catalogId": 104
+          },
+          "inventoryUnit": {
+            "catalogId": 104
+          }
+        },
+        "userCreate": {
+          "userId": 1
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "objects": [
+    {
+      "id": "promotionModel",
+      "definition": {
+        "brandOwner": {},
+        "vendorMaster": {},
+        "productGroup": {},
+        "promotionType": {}
+      }
+    },
+    {
+      "id": "filterResults",
+      "definition": [
+        {}
+      ]
+    }
+  ]
+}

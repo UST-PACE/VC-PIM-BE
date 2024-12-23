@@ -1,0 +1,32 @@
+{
+  "objects": [
+    {
+      "id": "product",
+      "definition": {
+        "productType": {},
+        "productGroup": {},
+        "productCategory": {},
+        "productSubcategory": {},
+        "sectionType": {},
+        "upcSellingChannels": []
+      }
+    },
+    {
+      "id": "inventory",
+      "definition": {
+        "storeLocation": {},
+        "upcMaster":{
+          "upcMasterId": 1,
+          "productType": {},
+          "productGroup": {},
+          "productCategory": {},
+          "productSubcategory": {},
+          "inventoryUnit": {},
+          "productTypeSellingUnit": {},
+          "sectionType": {},
+          "upcSellingChannels": []
+        }
+      }
+    }
+  ]
+}

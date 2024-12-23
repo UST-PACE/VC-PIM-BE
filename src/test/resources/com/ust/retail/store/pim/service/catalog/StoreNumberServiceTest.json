@@ -1,0 +1,31 @@
+{
+  "objects": [
+    {
+      "id": "storeManagerList",
+      "definition": [
+        {
+          "email": "user1@example.com",
+          "privileges": [
+            {
+              "role": {
+                "roleId": 2
+              }
+            }
+          ],
+          "approver": true
+        },
+        {
+          "email": "user2@example.com"
+        }
+      ]
+    },
+    {
+      "id": "administratorList",
+      "definition": [
+        {
+          "email": "user3@example.com"
+        }
+      ]
+    }
+  ]
+}

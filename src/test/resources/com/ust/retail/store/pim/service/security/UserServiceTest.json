@@ -1,0 +1,33 @@
+{
+  "objects": [
+    {
+      "id": "userModel",
+      "definition": {
+        "userName": "user",
+        "storeNumber": {},
+        "status": {
+          "catalogId": 80200
+        }
+      }
+    },
+    {
+      "id": "userModelBeforeDeactivation",
+      "definition": {
+        "userName": "user",
+        "storeNumber": {},
+        "status": {
+          "catalogId": 80200
+        },
+        "loginAttempts": 4
+      }
+    },
+    {
+      "id": "saveRequest",
+      "definition": {
+        "userId": 1,
+        "password": "XXXX",
+        "storeNumberId": 1
+      }
+    }
+  ]
+}

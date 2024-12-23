@@ -1,0 +1,29 @@
+{
+  "objects": [
+    {
+      "id": "request",
+      "definition": {
+        "adjustmentId": 1,
+        "lines": [
+          {
+            "txnNum": 1,
+            "adjustmentDetailId": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "response",
+      "definition": {
+        "statusId": 1,
+        "results": [
+          {
+            "txnNum": 1,
+            "returnDetailId": 1,
+            "success": true
+          }
+        ]
+      }
+    }
+  ]
+}

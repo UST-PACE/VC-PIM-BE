@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <style th:inline="css">
+
+      body {
+          font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .header {
+          background-color: /*[[${customerBgColor}]]*/ #d85129;
+          color: /*[[${customerFgColor}]]*/ white;
+          border-spacing: 0px;
+          padding: 0px;
+          width: 100%;
+
+      }
+
+      a:link, a:visited, a:hover {
+          color: black;
+      }
+
+      .detail th {
+          background-color: black;
+          color: white;
+          text-align: left;
+      }
+  </style>
+</head>
+<body>
+<table class="header">
+  <tr>
+    <td valign="middle"><H1>Purchase Order Authorization</H1></td>
+    <td>&nbsp;</td>
+    <td><img th:src="${host} + '/assets/resources/logo.png'"/></td>
+  </tr>
+</table>
+<table>
+  <tr>
+    <td colspan="3">
+      <br>
+      <p>
+        Dear <strong>PO Approver</strong>,
+      </p>
+
+      <!--/*@thymesVar id="order" type="com.ust.retail.store.pim.dto.purchaseorder.operation.PurchaseOrderModifyStatusResultDTO"*/-->
+      <p>
+        A Purchase Order requires your authorization:
+      </p>
+
+      <table class="detail">
+        <tbody>
+        <tr>
+          <th>PO#</th>
+          <td><em th:text="${order.purchaseOrderNum}">PO#</em></td>
+        </tr>
+        <tr>
+          <th>Vendor</th>
+          <td><em th:text="${vendorName}">Vendor</em></td>
+        </tr>
+        <tr>
+          <th>Requesting user</th>
+          <td><em th:text="${requestingUser}">Requesting user</em></td>
+        </tr>
+        <tr>
+          <th>Order total</th>
+          <td><em th:text="${#numbers.formatCurrency(order.orderCost)}">$0.00</em></td>
+        </tr>
+        </tbody>
+      </table>
+
+      <p>
+        Please click <a href="/" th:href="${basePath} + '/' + ${order.purchaseOrderId}">here</a> to review.
+      </p>
+
+    </td>
+  </tr>
+</table>
+
+<div th:replace="footer :: links"></div>
+</body>
+</html>

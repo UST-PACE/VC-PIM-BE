@@ -1,0 +1,101 @@
+{
+  "objects": [
+    {
+      "id": "prepSheetModel",
+      "definition": {
+        "details": [],
+        "rmDetails": []
+      }
+    },
+    {
+      "id": "saveRequest",
+      "definition": {
+        "dayOfTheWeek": 1,
+        "details": [
+          {
+            "recipeId": 1,
+            "portions": 10
+          }
+        ]
+      }
+    },
+    {
+      "id": "updateRequest",
+      "definition": {
+        "prepSheetId": 1,
+        "dayOfTheWeek": 1,
+        "details": [
+          {
+            "recipeId": 1,
+            "portions": 10
+          }
+        ]
+      }
+    },
+    {
+      "id": "recipe",
+      "definition": {
+        "details": [
+          {
+            "requiredOnPrepSheet": false
+          },
+          {
+            "requiredOnPrepSheet": true,
+            "qty": 10,
+            "unit": {},
+            "upcMaster": {
+              "upcMasterId": 1,
+              "contentPerUnit": 1,
+              "contentPerUnitUom": {},
+              "inventoryUnit": {}
+            }
+          }
+        ],
+        "relatedUpcMaster": {}
+      }
+    },
+    {
+      "id": "detailModel",
+      "definition": {
+        "recipe": {
+          "recipeId": 1,
+          "relatedUpcMaster": {
+            "upcMasterId": 1
+          },
+          "details": [
+            {
+              "upcMaster": {
+                "upcMasterId": 1
+              }
+            }
+          ]
+        },
+        "prepSheet": {
+          "details": [
+            {
+              "recipe": {
+                "relatedUpcMaster": {
+                  "upcMasterId": 1
+                },
+                "details": [
+                  {
+                    "upcMaster": {
+                      "upcMasterId": 1
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          "rmDetails": [
+            {
+              "upcMaster": {
+                "upcMasterId": 1
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

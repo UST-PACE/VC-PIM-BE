@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title></title>
+  <style>
+      body{
+          font-family: Arial, Helvetica, sans-serif;
+      }
+      .tableBorder {
+          border-collapse: collapse;
+          border: 1px solid black;
+          padding: 5px;
+      }
+      .relevantInfo {
+          border: 1px solid black;
+          padding: 5px;
+          background:#CCC;
+      }
+
+      .productSection {
+          border: 1px solid black;
+          font-weight: bold;
+          font-size: 22px;
+          text-align: center;
+          padding: 5px;
+          background:#FFF;
+      }
+
+      .productHeader {
+          border: 1px solid black;
+          font-weight: bold;
+          font-size: 15px;
+          text-align: center;
+          padding: 5px;
+          background:#FFF;
+      }
+
+      .productInfo {
+          border: 1px solid black;
+          padding: 5px;
+          background:#FFF;
+      }
+
+      .productInfo2 {
+          border: 1px solid black;
+          padding: 5px;
+          background:honeydew;
+      }
+
+      .terms{
+          font-size: 10px;
+          text-align: justify;
+          color:black;
+      }
+  </style>
+</head>
+<body>
+<table width="100%" style="text-align: center;">
+  <tr>
+    <td><img th:src="${host} + '/assets/resources/logo.png'" /></td>
+  </tr>
+  <tr>
+    <td>
+      FAYETTEVILLE, GA
+    </td>
+  </tr>
+</table>
+<!--/*@thymesVar id="po" type="com.ust.retail.store.pim.dto.purchaseorder.PurchaseOrderDTO"*/-->
+<!--/*@thymesVar id="detail" type="com.ust.retail.store.pim.dto.purchaseorder.PurchaseOrderDetailDTO"*/-->
+<!--/*@thymesVar id="vendor" type="com.ust.retail.store.pim.dto.vendormaster.VendorMasterDTO"*/-->
+<!--/*@thymesVar id="store" type="com.ust.retail.store.pim.dto.catalog.StoreNumberDTO"*/-->
+<!--/*@thymesVar id="user" type="com.ust.retail.store.pim.dto.security.UserDTO"*/-->
+<!--/*@thymesVar id="vendorContact" type="com.ust.retail.store.pim.dto.vendormaster.VendorContactDTO"*/-->
+<table width="100%" class="relevantInfo">
+  <tr>
+    <td width="33%">
+      <p><strong>Purchase Order</strong></p>
+      <p><span th:text="${po.purchaseOrderNum}">A-0000000001-001</span></p>
+    </td>
+    <td width="33%">
+      <p><strong>Currency</strong></p>
+      <p>USD</p>
+    </td>
+    <td width="33%">
+      <p><strong>Payment terms</strong></p>
+      <p>As per terms and conditions</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <strong>Contact</strong>
+    </td>
+    <td colspan="2">
+      <strong>Date</strong>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <p>
+        <span th:text="${user.nameDesc}">Name</span><br/>
+        E-mail: <span th:text="${user.email}">user@example.com</span><br/>
+        Phone: <span th:text="${user.phone}">123456789</span>
+      </p>
+    </td>
+    <td colspan="2">
+      <p><span th:text="${#dates.format(po.sentDate, 'MM/dd/yyy')}">01/01/2022</span></p>
+    </td>
+  </tr>
+</table>
+<table width="100%" class="tableBorder">
+  <tr>
+    <td width="50%" class="tableBorder">
+      <p><strong>Supplier Information</strong></p>
+      <p>
+        <span th:text="${vendor.vendorName}"></span><br/>
+        <span th:text="${vendor.shippingAddress}"></span><br/>
+        <span th:text="${vendor.shippingCity}"></span>, <span th:text="${vendor.shippingState}"></span><br/>
+        <span th:text="${vendor.shippingCountryName}"></span><br/>
+        Zip: <span th:text="${vendor.shippingZipCode}"></span><br/>
+      </p>
+      <p><strong>Contact Information</strong></p>
+      <p>
+        <span th:text="${vendorContact.vendorContactName}">Name</span><br/>
+        E-mail: <span th:text="${vendorContact.email}">user@example.com</span><br/>
+        Phone: <span th:text="${vendorContact.phone}">123456789</span>
+      </p>
+    </td>
+    <td width="50%" class="tableBorder">
+      <p><strong>Shipping information</strong></p>
+      <p>
+        <span th:text="${store.storeName}"></span><br/>
+        <span th:text="${store.address}"></span><br/>
+        Zip: <span th:text="${store.zipcode}"></span><br/>
+        Phone: <span th:text="${store.contactNumber}"></span>
+      </p>
+    </td>
+  </tr>
+</table>
+<table width="100%" class="tableBorder">
+  <tr>
+    <td width="50%" class="tableBorder productSection">
+      <p><b>Purchase Order Detail</b></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" class="relevantInfo">
+      <table style="width: 100%;">
+        <thead>
+        <tr class="productHeader">
+          <td>Vendor SKU</td>
+          <td>UPC</td>
+          <td>Product</td>
+          <td># Cases</td>
+          <td># Pallets</td>
+          <td>Total Units</td>
+          <td>Unit cost</td>
+          <td>Subtotal</td>
+        </tr>
+        </thead>
+        <tbody id="productInformation">
+        <tr th:each="detail,row : ${po.details}" th:class="${row.even} ? 'productInfo' : 'productInfo2'">
+          <td th:text="${detail.vendorSku}">12356789</td>
+          <td th:text="${detail.principalUpc}">987654321</td>
+          <td th:text="${detail.productName}">My product</td>
+          <td th:text="${#numbers.formatInteger(detail.caseNum, 1, 'COMMA')}">2</td>
+          <td th:text="${#numbers.formatInteger(detail.palletNum, 1, 'COMMA')}">1</td>
+          <td th:text="${#numbers.formatInteger(detail.totalAmount, 1, 'COMMA')}">50</td>
+          <td th:text="${#numbers.formatDecimal(detail.productCost, 1, 'COMMA', 2, 'POINT')}">50.00</td>
+          <td th:text="${#numbers.formatDecimal(detail.originalCost, 1, 'COMMA', 2, 'POINT') + ' USD'}">500.00</td>
+        </tr>
+        </tbody>
+      </table>
+    </td>
+  </tr>
+
+</table>
+
+<table class="tableBorder" width="100%">
+  <tr>
+    <td width="65%">
+      <table style="width: 100%">
+        <tr th:if="${!#strings.isEmpty(po.shippingOptions)}">
+          <td>
+            <p><strong>Shipping options:</strong></p>
+            <p th:text="${po.shippingOptions}"></p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p><strong>Amount in Words:</strong></p>
+            <p><label id="amountInWords"><span th:text="${T(com.ust.retail.store.pim.util.ConvertDollarToWords).covertToLetters(po.finalCost)}"></span></label></p>
+          </td>
+        </tr>
+        <tr th:if="${!#strings.isEmpty(po.notes)}">
+          <td>
+            <p><strong>Order Notes:</strong></p>
+            <p th:text="${po.notes}"></p>
+          </td>
+        </tr>
+      </table>
+    </td>
+    <td width="35%">
+      <table style="width: 100%">
+        <tr>
+          <td><strong>Order Total: </strong></td>
+          <td style="text-align: right"><span class="text-right"><label id="subtotal" th:text="${#numbers.formatDecimal(po.totalCost, 1, 'COMMA', 2, 'POINT')}"></label></span></td>
+        </tr>
+        <th:block th:if="${po.finalCost != po.totalCost}">
+          <tr th:if="${po.appliedVendorCredit != 0}">
+            <td><strong>Applied Vendor credit: </strong></td>
+            <td style="text-align: right"><span class="text-right"><label id="vendorCredit" th:text="${#numbers.formatDecimal(po.appliedVendorCredit, 1, 'COMMA', 2, 'POINT')}"></label></span></td>
+          </tr>
+          <tr th:if="${po.discount != 0}">
+            <td><strong>Discounts: </strong></td>
+            <td style="text-align: right"><span class="text-right"><label id="discount" th:text="${#numbers.formatDecimal(po.discount, 1, 'COMMA', 2, 'POINT')}"></label></span></td>
+          </tr>
+          <tr>
+            <td><strong>Subtotal: </strong></td>
+            <td style="text-align: right"><span class="text-right"><label id="total" th:text="${#numbers.formatDecimal(po.finalCost, 1, 'COMMA', 2, 'POINT')}"></label></span></td>
+          </tr>
+        </th:block>
+        <tr>
+          <td><strong>Tax 0%: </strong></td>
+          <td style="text-align: right"><span class="text-right"><label id="tax" th:text="${#numbers.formatDecimal(0, 1, 'COMMA', 2, 'POINT')}"></label></span></td>
+        </tr>
+        <tr>
+          <td><strong>Total: </strong></td>
+          <td style="text-align: right"><span class="text-right"><label id="totalGlobal" th:text="${#numbers.formatDecimal(po.finalCost, 1, 'COMMA', 2, 'POINT')}"></label></span></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<table>
+  <tr>
+    <td>
+      <h3 class="text-center">TERMS AND CONDITIONS</h3>
+    </td>
+  </tr>
+  <tr class="terms">
+    <td>
+      <ol>
+        <li><strong>Packing and Shipping.</strong> Deliveries shall be made as specified on this purchase order without charge for packaging or storage unless otherwise agreed in writing by.</li>
+        <li><strong>Taxes and Duties.</strong> The prices stated in this purchase order include all applicable taxes and duties, except state and local sales and use taxes, which by statute may be passed on to <span th:text="${customer}">UST</span>.</li>
+        <li><strong>Payment and Prices.</strong> Unless different payment terms are expressly stated on the vendor agreement , payment terms shall be thirty (30) days from <span th:text="${customer}">UST</span> 's receipt of Seller's correctly presented invoice with copy of delivery confirmation.</li>
+        <li><strong>Warranty.</strong> Seller warrants that all Deliverables will conform to applicable specifications, descriptions, quality, recalls and samples, and free from design defect, claim, encumbrance or lien, and be suitable for the purpose intended by <span th:text="${customer}">UST</span>.</li>
+        <li><strong>Default.</strong> <span th:text="${customer}">UST</span>  may, by written notice to Seller, cancel this purchase order or any release or order subject to this purchase order for default, (a) if Seller fails to deliver the Deliverables strictly within the time specified in this purchase order.</li>
+        <li><strong>Changes; Cancellations.</strong> <span th:text="${customer}">UST</span>   may cancel, modify or suspend any Order if such cancellation, modification or suspension is made prior to shipment. <span th:text="${customer}">UST</span> may at any time, by reasonable advance written notice to Supplier.</li>
+        <li><strong>Inspection; Testing.</strong> Regardless of where <span th:text="${customer}">UST</span> takes delivery of the Products, <span th:text="${customer}">UST</span> reserves the right to inspect, test and approve Products described in any Order, as well as the right to reject any Products not conforming to the terms of any Order.</li>
+        <li><strong>Country of Origin Requirements.</strong> Supplier represents and warrants to <span th:text="${customer}">UST</span> that it complies with all federal, state, provincial, and local Country of Origin labelling and related requirements.</li>
+        <li><strong>Purchaser's Rights.</strong> Without limiting other rights and remedies available to it, <span th:text="${customer}">UST</span> may, at its option, (a) return nonconforming Products to Supplier, at Supplier’s risk and expense, as long as <span th:text="${customer}">UST</span> would then have the right under applicable law to reject or to revoke acceptance of those Products, and require Supplier either to refund the price or promptly to repair or replace the Products, or re-perform the services, at Supplier’s risk and expense.</li>
+        <li><strong>Insurance.</strong> Supplier shall maintain in effect, at Supplier's expense, the following minimum insurance coverages as required in United States.</li>
+        <li><strong>Unsafe or Unfit Products.</strong> If a governmental agency declares that any of the Products or any ingredient of, or any material included in, any of the Products or any packaging or supplies used in connection with the Products, or if <span th:text="${customer}">UST</span> at any time believes in good faith that any of the Products or any such ingredient, material, packaging or supplies. purchaser’s right to cancel set forth in the immediately preceding sentence extends to all Products affected by the applicable event and to unrelated Products that come from the same facility.</li>
+        <li><strong>Product Modification.</strong> If the product UPC or item number  has been changed then it should be first advised to <span th:text="${customer}">UST</span> before shipment processed by buyer. Failure to advise the change will make the item unacceptable at delivery and expense will be on vendor.</li>
+      </ol>
+      <i>
+        The above Standard Purchase Order Terms and Conditions ("Terms") only apply to transactions that do not have a written agreement, duly executed by both parties. If there is such an agreement, then those terms shall be the terms that govern the transaction and relationship of the parties.
+      </i>
+    </td>
+  </tr>
+</table>
+</body>
+</html>

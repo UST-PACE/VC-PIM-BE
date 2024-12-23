@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <style th:inline="css">
+
+      body {
+          font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .header {
+          background-color: /*[[${customerBgColor}]]*/ black;
+          color: /*[[${customerFgColor}]]*/ white;
+          border-spacing: 0px;
+          padding: 0px;
+          width: 100%;
+
+      }
+
+      a:link, a:visited, a:hover {
+          color: black;
+      }
+
+      .orders {
+          margin-top: 2em;
+      }
+
+      .orders table {
+          font-size: 1em;
+      }
+
+      .orders th {
+          background-color: #a0a0a0;
+          padding: .4em;
+      }
+
+      .orders tbody tr.even {
+          background-color: #cecece;
+      }
+
+      .orders tbody td {
+          text-align: center;
+      }
+
+      .orders tbody td.number {
+          text-align: right;
+      }
+
+      .orders tbody td.title {
+          text-align: left
+      }
+
+      .orders a {
+          color: black;
+      }
+  </style>
+</head>
+<body>
+<table class="header">
+  <tr>
+    <td valign="middle"><H1>[[${customer}]] CSV Dump</H1></td>
+    <td>&nbsp;</td>
+    <td><img th:src="${host} + '/assets/resources/logo.png'"/></td>
+  </tr>
+</table>
+
+
+<table>
+  <tr>
+    <td colspan="3">
+      <br>
+      <p>
+        Dear <strong data-th-text="${username}"></strong>,
+      </p>
+
+      <p>
+        Please find attached the following items:
+      </p>
+
+      <ul>
+        <li>UPC Master CSV Dump for the following stores:
+          <ul th:each="storeName: ${storeNames}">
+            <li th:text="${storeName}"></li>
+          </ul>
+        </li>
+        <li>Recipe CSV Dump</li>
+        <li>Recipe Ingredients CSV Dump</li>
+        <li>Recipe Add-ons CSV Dump</li>
+      </ul>
+
+      <p>Up to date information is available <a href="/" th:href="${host} + '/#/reports/csv-dump'">here</a></p>
+    </td>
+  </tr>
+</table>
+
+
+<div th:replace="footer :: links"></div>
+
+</body>
+</html>

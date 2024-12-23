@@ -1,0 +1,29 @@
+{
+  "objects": [
+    {
+      "id": "product",
+      "definition": {
+        "principalUpc": "ABC"
+      }
+    },
+    {
+      "id": "pendingPoDetail",
+      "definition": {
+        "itemStatus": {
+          "catalogId": 13000
+        }
+      }
+    },
+    {
+      "id": "receivedPoDetail",
+      "definition": {
+        "upcMaster": {
+          "principalUpc": "ABC"
+        },
+        "itemStatus": {
+          "catalogId": 13001
+        }
+      }
+    }
+  ]
+}

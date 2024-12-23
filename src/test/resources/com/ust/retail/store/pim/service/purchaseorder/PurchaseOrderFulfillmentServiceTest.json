@@ -1,0 +1,121 @@
+{
+  "objects": [
+    {
+      "id": "reorderCandidatesNewOrder",
+      "definition": [
+        {
+          "vendorMasterId": 1,
+          "storeNumId": 1,
+          "upcMasterId": 1,
+          "stockMin": 1,
+          "qty": 0,
+          "totalAmount": 0
+        }
+      ]
+    },
+    {
+      "id": "reorderCandidateNewOrderRequest",
+      "definition": {
+        "newOrder": true
+      }
+    },
+    {
+      "id": "reorderCandidatesDetailToRemove",
+      "definition": [
+        {
+          "vendorMasterId": 1,
+          "storeNumId": 1,
+          "upcMasterId": 1,
+          "stockMin": 1,
+          "qty": 100,
+          "totalAmount": 1,
+          "purchaseOrderId": 1,
+          "purchaseOrderDetailId": 1
+        }
+      ]
+    },
+    {
+      "id": "reorderCandidateDetailToRemoveRequest",
+      "definition": {
+        "detailToRemove": true
+      }
+    },
+    {
+      "id": "reorderCandidatesDetailToUpdate",
+      "definition": [
+        {
+          "vendorMasterId": 1,
+          "storeNumId": 1,
+          "upcMasterId": 1,
+          "stockMin": 250,
+          "qty": 100,
+          "totalAmount": 100,
+          "purchaseOrderId": 1,
+          "purchaseOrderDetailId": 1
+        }
+      ]
+    },
+    {
+      "id": "reorderCandidateDetailToUpdateRequest",
+      "definition": {
+        "detailToUpdate": true
+      }
+    },
+    {
+      "id": "reorderCandidatesNotFulfill",
+      "definition": [
+        {
+          "vendorMasterId": 1,
+          "storeNumId": 1,
+          "upcMasterId": 1,
+          "stockMin": 250,
+          "qty": 100,
+          "totalAmount": 150,
+          "purchaseOrderId": 1,
+          "purchaseOrderDetailId": 1
+        }
+      ]
+    },
+    {
+      "id": "reorderCandidateNotFulfillRequest",
+      "definition": {}
+    },
+    {
+      "id": "reorderCandidatesAppend",
+      "definition": [
+        {
+          "vendorMasterId": 1,
+          "storeNumId": 1,
+          "upcMasterId": 1,
+          "stockMin": 250,
+          "qty": 100,
+          "totalAmount": 0,
+          "purchaseOrderId": 1
+        }
+      ]
+    },
+    {
+      "id": "reorderCandidateAppendRequest",
+      "definition": {
+        "toFulfill": true
+      }
+    },
+    {
+      "id": "purchaseOrderResult",
+      "definition": {
+        "purchaseOrderId": 1,
+        "vendorMasterId": 1,
+        "vendorName": "Vendor1",
+        "storeNumId": 1,
+        "storeName": "",
+        "statusName": "",
+        "purchaseOrderNum": "ORDER_NUM",
+        "totalCost": 0,
+        "discount": 0,
+        "finalCost": 0,
+        "orderUnderMoq": false,
+        "suggestedEta": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <style th:inline="css">
+
+      body {
+          font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .header {
+          background-color: /*[[${customerBgColor}]]*/ black;
+          color: /*[[${customerFgColor}]]*/ white;
+          border-spacing: 0px;
+          padding: 0px;
+          width: 100%;
+
+      }
+
+      a:link, a:visited, a:hover {
+          color: black;
+      }
+
+      .orders {
+          margin-top: 2em;
+      }
+
+      .orders table {
+          font-size: 1em;
+      }
+
+      .orders th {
+          background-color: black;
+          color: white;
+          padding: .4em;
+      }
+
+      .orders tbody tr.even {
+          background-color: #cecece;
+      }
+
+      .orders tbody td {
+          text-align: center;
+      }
+
+      .orders tbody td.number {
+          text-align: right;
+      }
+
+      .orders tbody td.title {
+          text-align: left
+      }
+
+      .orders a {
+          color: black;
+      }
+  </style>
+</head>
+<body>
+<table class="header">
+  <tr>
+    <td valign="middle"><H1>[[${customer}]] Auto Fulfillment Process</H1></td>
+    <td>&nbsp;</td>
+    <td><img th:src="${host} + '/assets/resources/logo.png'"/></td>
+  </tr>
+</table>
+
+
+<table>
+  <tr>
+    <td colspan="3">
+      <br>
+      <p>
+        Dear <strong data-th-text="${username}">USER</strong>,
+      </p>
+
+      <p>
+        The following is a list of orders created or updated as a result of the Automatic Fulfillment process:
+      </p>
+
+      <div class="orders">
+        <table>
+          <thead>
+          <tr>
+            <th># Purchase Order</th>
+            <th>Vendor Name</th>
+            <th>Store Name</th>
+            <th>Status</th>
+            <th>ETA</th>
+            <th>Under MOQ</th>
+            <th>Subtotal</th>
+            <th>Discount</th>
+            <th>Total</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr th:each="order,row : ${orders}" th:class="${row.even} ? 'even' : ''">
+            <td class="title">
+              <a href="/" th:href="${basePath} + '/' + ${order.purchaseOrderId}">
+                <span th:text="${order.purchaseOrderNum}">PO Number</span>
+              </a>
+            </td>
+            <td th:text="${order.vendorName}">My First Vendor</td>
+            <td th:text="${order.storeName}">My Store Name</td>
+            <td th:text="${order.statusName}">Status</td>
+            <td th:text="${#dates.format(order.suggestedEta, 'yyyy-MM-dd')}">1900-01-01</td>
+            <td th:text="${order.orderUnderMoq}">true</td>
+            <td class="number" th:text="${#numbers.formatCurrency(order.totalCost)}">$ 50.00</td>
+            <td class="number" th:text="${#numbers.formatCurrency(order.discount)}">$ 50.00</td>
+            <td class="number" th:text="${#numbers.formatCurrency(order.finalCost)}">$ 50.00</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </td>
+  </tr>
+</table>
+
+
+<div th:replace="footer :: links"></div>
+
+</body>
+</html>

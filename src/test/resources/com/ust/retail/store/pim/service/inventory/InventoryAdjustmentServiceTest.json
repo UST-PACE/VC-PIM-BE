@@ -1,0 +1,85 @@
+{
+  "objects": [
+    {
+      "id": "startRequest",
+      "definition": {
+        "storeLocationId": 1,
+        "categories": [
+          {
+            "productCategoryId": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "adjustmentModel",
+      "definition": {
+        "inventoryAdjustmentId": 3,
+        "details": [
+          {
+            "upcMaster": {
+              "upcMasterId": 1
+            },
+            "inventoryAdjustment": {
+              "shrinkages": []
+            }
+          }
+        ],
+        "shrinkages": [],
+        "categories": [
+          {
+
+          }
+        ]
+      }
+    },
+    {
+      "id": "product",
+      "definition": {
+        "upcMasterId": 1,
+        "principalUpc": "CODE",
+        "productName": "Product 1",
+        "productCategory": {
+          "productCategoryName": "category1"
+        }
+      }
+    },
+    {
+      "id": "adjustRequest",
+      "definition": {
+        "inventoryAdjustmentId": 3,
+        "inventoryAdjustmentDetailId": 15,
+        "storeLocationId": 1,
+        "item": {
+          "qty": 2868.4,
+          "upcMasterId": 5,
+          "storeLocationId": 1,
+          "shrinkage": false
+        },
+        "shrinkageItems": [
+          {
+            "inventoryId": 14,
+            "qty": 68.4,
+            "upcMasterId": 5,
+            "storeLocationId": 1,
+            "shrinkage": true
+          }
+        ],
+        "shrinkages": [
+          {
+            "upcMasterId": 5,
+            "shrinkageReasonId": 15000,
+            "qty": 60,
+            "evidence": null
+          },
+          {
+            "upcMasterId": 5,
+            "shrinkageReasonId": 15001,
+            "qty": 8.4,
+            "evidence": null
+          }
+        ]
+      }
+    }
+  ]
+}

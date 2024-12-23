@@ -1,0 +1,17 @@
+{
+  "objects": [
+    {
+      "id": "externalStoreList",
+      "definition": [
+        {
+          "storeId": 1,
+          "storeName": "Store 1"
+        },
+        {
+          "storeId": 2,
+          "storeName": "Store 2"
+        }
+      ]
+    }
+  ]
+}

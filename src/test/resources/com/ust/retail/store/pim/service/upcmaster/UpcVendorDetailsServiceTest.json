@@ -1,0 +1,25 @@
+{
+  "objects": [
+    {
+      "id": "saveRequest",
+      "definition": {
+        "defaultVendor": true
+      }
+    },
+    {
+      "id": "vendorDetailModel",
+      "definition": {
+        "upcMaster": {},
+        "vendorMaster": {
+          "distributor": {},
+          "vendorCountry": {},
+          "shippingCountry": {},
+          "vendorContacts": [],
+          "vendorStoreNumbers": []
+        },
+        "packageType": {},
+        "countryOfOrigin": {}
+      }
+    }
+  ]
+}

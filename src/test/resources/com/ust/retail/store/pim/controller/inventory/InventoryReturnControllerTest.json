@@ -1,0 +1,37 @@
+{
+  "objects": [
+    {
+      "id": "inventory",
+      "definition":{
+        "inventoryModel": {
+          "storeLocation": {}
+        },
+        "upcMasterModel": {
+          "upcMasterId": 1
+        }
+      }
+    },
+    {
+      "id": "emptySummary",
+      "definition": {
+        "sumary": {}
+      }
+    },
+    {
+      "id": "summary",
+      "definition": {
+        "sumary": {
+          "cat 1": [
+            {
+              "upcMasterId": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "summary",
+      "definition": {}
+    }
+  ]
+}

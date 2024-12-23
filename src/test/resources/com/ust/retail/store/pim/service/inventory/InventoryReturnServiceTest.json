@@ -1,0 +1,36 @@
+{
+  "objects": [
+    {
+      "id": "request",
+      "definition": {
+        "inventoryProductReturnId": 1,
+        "code": "CODE"
+      }
+    },
+    {
+      "id": "product",
+      "definition": {
+        "upcMasterId": 1,
+        "productCategory": {
+          "productCategoryName": "category1"
+        }
+      }
+    },
+    {
+      "id": "inventoryReturn",
+      "definition": {
+        "inventoryProductReturnId": 1,
+        "returnDetails": [
+          {
+            "upcMaster": {
+              "upcMasterId": 1,
+              "principalUpc": "CODE"
+            },
+            "returnReason": {
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

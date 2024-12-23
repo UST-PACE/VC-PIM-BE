@@ -1,0 +1,84 @@
+{
+  "objects": [
+    {
+      "id": "productReturn",
+      "definition": {
+        "status": 1,
+        "returnDetails": []
+      }
+    },
+    {
+      "id": "productReturnRequest",
+      "definition": {
+        "returnId": 1,
+        "lines": [
+          {
+            "inventoryHistoryId": 1,
+            "returnDetailId": 1,
+            "vendorMasterId": 1
+          },
+          {
+            "inventoryHistoryId": 1,
+            "returnDetailId": 2,
+            "vendorMasterId": 1,
+            "creditInfo": {
+              "upcMasterId": 1,
+              "vendorMasterId": 1
+            }
+          },
+          {
+            "inventoryHistoryId": 1,
+            "returnDetailId": 3,
+            "vendorMasterId": 1,
+            "creditInfo": {
+              "upcMasterId": 1
+            }
+          },
+          {
+            "inventoryHistoryId": 1,
+            "returnDetailId": 4,
+            "vendorMasterId": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "vendorDetails",
+      "definition": {
+      }
+    },
+    {
+      "id": "productReturnDetailModel",
+      "definition": {
+        "storeLocation": {
+          "storeNumber": {
+            "storeNumId": 1
+          }
+        },
+        "qty": 1
+      }
+    },
+    {
+      "id": "calculateCreditRequest",
+      "definition": {
+        "creditsInfo": [
+          {
+            "upcMasterId": 1,
+            "vendorMasterId": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "returnDetailsWithNotPendingStatus",
+      "definition": [
+        {
+          "statusId": 12001
+        },
+        {
+          "statusId": 1
+        }
+      ]
+    }
+  ]
+}

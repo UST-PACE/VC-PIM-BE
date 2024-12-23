@@ -1,0 +1,16 @@
+{
+  "objects": [
+    {
+      "id": "product",
+      "definition": {
+        "contentPerUnit": 1,
+        "contentPerUnitUom": {
+          "catalogId": 104
+        },
+        "inventoryUnit": {
+          "catalogId": 104
+        }
+      }
+    }
+  ]
+}

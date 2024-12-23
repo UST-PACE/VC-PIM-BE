@@ -1,0 +1,10 @@
+{
+  "objects": [
+    {
+      "id": "product",
+      "definition": {
+        "brandOwner": {}
+      }
+    }
+  ]
+}

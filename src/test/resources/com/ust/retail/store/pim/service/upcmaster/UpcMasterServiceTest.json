@@ -1,0 +1,121 @@
+{
+  "objects": [
+    {
+      "id": "updateRequest",
+      "definition": {
+        "upcMasterId": 1,
+        "nutritionalInformation": {}
+      }
+    },
+    {
+      "id": "updateProductTypeRequest",
+      "definition": {
+        "upcMasterId": 1,
+        "productTypeId": 2,
+        "nutritionalInformation": {}
+      }
+    },
+    {
+      "id": "updateContentPerUnitRequest",
+      "definition": {
+        "upcMasterId": 1,
+        "productTypeId": 1,
+        "contentPerUnit": 2.5,
+        "contentPerUnitUomId": 2,
+        "nutritionalInformation": {}
+      }
+    },
+    {
+      "id": "updateContentPerUnitUomRequest",
+      "definition": {
+        "upcMasterId": 1,
+        "productTypeId": 1,
+        "contentPerUnit": 1.5,
+        "contentPerUnitUomId": 2,
+        "nutritionalInformation": {}
+      }
+    },
+    {
+      "id": "updateInventoryUnitRequest",
+      "definition": {
+        "upcMasterId": 1,
+        "productTypeId": 1,
+        "contentPerUnit": 1.5,
+        "contentPerUnitUomId": 1,
+        "inventoryUnitId": 2,
+        "nutritionalInformation": {}
+      }
+    },
+    {
+      "id": "saveRequest",
+      "definition": {
+        "nutritionalInformation": {}
+      }
+    },
+    {
+      "id": "updateWithValidRequest",
+      "definition": {
+        "upcMasterId": 1,
+        "productTypeId": 1,
+        "contentPerUnit": 1.5,
+        "contentPerUnitUomId": 1,
+        "inventoryUnitId": 1,
+        "nutritionalInformation": {}
+      }
+    },
+    {
+      "id": "product",
+      "definition": {
+        "principalUpc": "CODE",
+        "contentPerUnit": 1.5,
+        "upcMasterType": {},
+        "brandOwner": {},
+        "productType": {
+          "catalogId": 1
+        },
+        "countryOfOrigin": {},
+        "productGroup": {},
+        "productCategory": {},
+        "productSubcategory": {},
+        "productItem": {},
+        "packageType": {},
+        "productTypeBuyingUnit": {},
+        "productTypeSellingUnit": {},
+        "sectionType": {},
+        "upcSellingChannels": [],
+        "contentPerUnitUom": {
+          "catalogId": 1
+        },
+        "inventoryUnit": {
+          "catalogId": 1
+        },
+        "upcMasterStatus": {
+          "catalogId": 30000
+        }
+      }
+    },
+    {
+      "id": "recipe",
+      "definition": {
+        "relatedUpcMaster": {
+          "principalUpc": "CODE",
+          "upcMasterType": {},
+          "brandOwner": {},
+          "productType": {},
+          "countryOfOrigin": {},
+          "productGroup": {},
+          "productCategory": {},
+          "productSubcategory": {},
+          "productItem": {},
+          "packageType": {},
+          "productTypeBuyingUnit": {},
+          "productTypeSellingUnit": {}
+        }
+      }
+    },
+    {
+      "id": "topping",
+      "definition": {}
+    }
+  ]
+}

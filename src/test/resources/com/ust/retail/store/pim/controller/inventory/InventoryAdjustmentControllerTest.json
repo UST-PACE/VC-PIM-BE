@@ -1,0 +1,96 @@
+{
+  "objects": [
+    {
+      "id": "startRequest",
+      "definition": {
+        "storeLocationId": 1,
+        "categories": [
+          {
+            "productCategoryId": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "startResponse",
+      "definition": {
+        "inventoryAdjustmentId": 1
+      }
+    },
+    {
+      "id": "inventoryProduct",
+      "definition": {
+        "inventoryModel": {
+          "inventoryId": 1,
+          "storeLocation": {
+            "storeLocationId": 1
+          }
+        },
+        "upcMasterModel": {
+          "upcMasterId": 1,
+          "principalUpc": "CODE",
+          "productName": "Product 1"
+        }
+      }
+    },
+    {
+      "id": "adjustmentSummary",
+      "definition": {
+        "summary": {
+          "category1": [
+            {
+              "inventoryAdjustmentDetailId": 1,
+              "upcMasterId": 1,
+              "principalUPC": "CODE",
+              "productName": "Product 1",
+              "qty": 1000
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "adjustRequest",
+      "definition": {
+        "inventoryAdjustmentId": 3,
+        "inventoryAdjustmentDetailId": 15,
+        "storeLocationId": 1,
+        "item": {
+          "qty": 2868.4,
+          "upcMasterId": 5,
+          "storeLocationId": 1,
+          "shrinkage": false
+        },
+        "shrinkageItems": [
+          {
+            "inventoryId": 14,
+            "qty": 68.4,
+            "upcMasterId": 5,
+            "storeLocationId": 1,
+            "shrinkage": true
+          }
+        ],
+        "shrinkages": [
+          {
+            "upcMasterId": 5,
+            "shrinkageReasonId": 15000,
+            "qty": 60,
+            "evidence": null
+          },
+          {
+            "upcMasterId": 5,
+            "shrinkageReasonId": 15001,
+            "qty": 8.4,
+            "evidence": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "finishRequest",
+      "definition": {
+        "inventoryAdjustmentId": 1
+      }
+    }
+  ]
+}

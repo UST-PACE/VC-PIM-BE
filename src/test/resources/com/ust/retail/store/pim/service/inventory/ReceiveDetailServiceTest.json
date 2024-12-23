@@ -1,0 +1,103 @@
+{
+  "objects": [
+    {
+      "id": "receivingRequest",
+      "definition": {
+        "purchaseOrderDetailId": 1,
+        "item": {},
+        "warnings": []
+      }
+    },
+    {
+      "id": "purchaseOrderDetailModel",
+      "definition": {
+        "itemStatus": {
+          "catalogId": 13000
+        },
+        "purchaseOrder": {}
+      }
+    },
+    {
+      "id": "receivedPurchaseOrderDetailModel",
+      "definition": {
+        "upcMaster": {
+          "principalUpc": "CODE"
+        },
+        "itemStatus": {
+          "catalogId": 13001
+        }
+      }
+    },
+    {
+      "id": "receivingUpdateRequest",
+      "definition": {
+        "purchaseOrderDetailId": 12,
+        "poReceiveDetailId": 2,
+        "prevQty": 90,
+        "prevStoreLocation": 1,
+        "item": {
+          "qty": 100,
+          "upcMasterId": 2,
+          "storeLocationId": 1,
+          "batchNumber": "12345aaa",
+          "expirationDate": "2023-01-02"
+        },
+        "warnings": []
+      }
+    },
+    {
+      "id": "poReceiveModel",
+      "definition": {
+        "receptionWarnings": []
+      }
+    },
+    {
+      "id": "summaryList",
+      "definition": [
+        {
+          "receiver": ""
+        },
+        {
+          "hasError": true,
+          "receiver": ""
+        }
+      ]
+    },
+    {
+      "id": "summaryListNoErrors",
+      "definition": [
+        {
+          "receiver": ""
+        },
+        {
+          "receiver": ""
+        }
+      ]
+    },
+    {
+      "id": "purchaseOrderModel",
+      "definition": {
+        "storeNumber": {
+          "storeNumId": 1
+        },
+        "vendorMaster": {
+          "vendorMasterId": 1
+        }
+      }
+    },
+    {
+      "id": "receiveWarningList",
+      "definition": [
+        {}
+      ]
+    },
+    {
+      "id": "notifyReceptionRequest",
+      "definition": {
+        "purchaseOrderId": 1,
+        "driverName": "John Doe",
+        "driverEmail": "john@example.com"
+      }
+    }
+  ]
+}

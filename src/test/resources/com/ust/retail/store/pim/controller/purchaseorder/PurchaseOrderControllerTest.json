@@ -1,0 +1,20 @@
+{
+  "objects": [
+    {
+      "id": "revisionUpdatedResult",
+      "definition": {
+        "revisionUpdated": true
+      }
+    },
+    {
+      "id": "escalationWarningResult",
+      "definition": {
+        "escalationWarning": true
+      }
+    },
+    {
+      "id": "inventoryList",
+      "definition": []
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "objects": [
+    {
+      "id": "saveRequest",
+      "definition": {
+        "vendorContacts": [
+          {}
+        ]
+      }
+    },
+    {
+      "id": "updateRequest",
+      "definition": {
+        "vendorMasterId": 1,
+        "vendorContacts": [
+          {}
+        ]
+      }
+    },
+    {
+      "id": "vendorMasterModel",
+      "definition": {
+        "distributor": {},
+        "vendorCountry": {},
+        "shippingCountry": {},
+        "vendorContacts": [
+          {
+            "vendorType": {
+              "catalogId": 9000
+            }
+          },
+          {
+            "vendorType": {
+              "catalogId": 9001
+            }
+          }
+        ],
+        "vendorCredit": {
+          "vendorCreditId": 1,
+          "availableCredit": 0
+        }
+      }
+    }
+  ]
+}

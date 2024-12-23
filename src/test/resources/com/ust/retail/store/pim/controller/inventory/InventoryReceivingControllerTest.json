@@ -1,0 +1,29 @@
+{
+  "objects": [
+    {
+      "id": "purchaseOrder",
+      "definition": {
+        "vendorMaster": {},
+        "storeNumber": {},
+        "status": {}
+      }
+    },
+    {
+      "id": "orderDetail",
+      "definition": {
+        "purchaseOrderDetailId": 1,
+        "itemStatus": {},
+        "upcMaster": {
+          "productTypeBuyingUnit": {}
+        },
+        "purchaseOrder": {
+          "storeNumber": {}
+        }
+      }
+    },
+    {
+      "id": "receiveDetail",
+      "definition": {}
+    }
+  ]
+}

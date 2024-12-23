@@ -1,0 +1,325 @@
+{
+  "objects": [
+    {
+      "id": "receivingRequest",
+      "definition": {
+        "purchaseOrderDetailId": 1,
+        "item": {
+          "upcMasterId": 1,
+          "qty": 10
+        },
+        "warnings": []
+      }
+    },
+    {
+      "id": "itemProduct",
+      "definition": {
+        "contentPerUnit": 1,
+        "contentPerUnitUom": {},
+        "inventoryUnit": {}
+      }
+    },
+    {
+      "id": "receivingUpdateRequest",
+      "definition": {
+        "purchaseOrderDetailId": 12,
+        "poReceiveDetailId": 2,
+        "prevQty": 90,
+        "prevStoreLocation": 1,
+        "item": {
+          "qty": 100,
+          "upcMasterId": 2,
+          "storeLocationId": 1,
+          "batchNumber": "12345aaa",
+          "expirationDate": "2023-01-02"
+        },
+        "warnings": []
+      }
+    },
+    {
+      "id": "produceRequest",
+      "definition": {
+        "produceDetails": [
+          {
+            "item": {
+              "upcMasterId": 1,
+              "qty": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "inventoryAdjustmentRequest",
+      "definition": {
+        "inventoryAdjustmentId": 3,
+        "inventoryAdjustmentDetailId": 15,
+        "storeLocationId": 1,
+        "item": {
+          "qty": 2868.4,
+          "upcMasterId": 5,
+          "storeLocationId": 1,
+          "shrinkage": false
+        },
+        "shrinkageItems": [
+          {
+            "inventoryId": 14,
+            "qty": 68.4,
+            "upcMasterId": 5,
+            "storeLocationId": 1,
+            "shrinkage": true
+          }
+        ],
+        "shrinkages": [
+          {
+            "upcMasterId": 5,
+            "shrinkageReasonId": 15000,
+            "qty": 60,
+            "evidence": null
+          },
+          {
+            "upcMasterId": 5,
+            "shrinkageReasonId": 15001,
+            "qty": 8.4,
+            "evidence": null
+          }
+        ]
+      }
+    },
+    {
+      "id": "inventoryAdjustmentHistory",
+      "definition": [
+        {
+          "inventoryHistoryId": 1,
+          "previewsQty": 100,
+          "operationQty": 100,
+          "finalQty": 0,
+          "referenceId": 1
+        }
+      ]
+    },
+    {
+      "id": "vendorCreditsRequest",
+      "definition": {
+        "inventoryProductReturnId": 7,
+        "inventoryProductReturnDetailId": 4,
+        "returnReasonId": 8001,
+        "storeLocationId": 1,
+        "qty": 200,
+        "code": "111-CREAM",
+        "batchNum": "aaa bbb",
+        "item": {
+          "qty": 200,
+          "upcMasterId": 1,
+          "storeLocationId": 1,
+          "shrinkage": false
+        }
+      }
+    },
+    {
+      "id": "vendorCreditsHistory",
+      "definition": [
+        {
+          "inventoryHistoryId": 1,
+          "previewsQty": 100,
+          "operationQty": 100,
+          "finalQty": 0,
+          "referenceId": 1
+        }
+      ]
+    },
+    {
+      "id": "inventorySalesRequest",
+      "definition": {
+        "externalReferenceId": 1,
+        "items": [
+          {}
+        ]
+      }
+    },
+    {
+      "id": "customerReturnRequest",
+      "definition": {
+        "externalReferenceId": 1,
+        "items": [
+          {}
+        ]
+      }
+    },
+    {
+      "id": "authorizeByTxnHistory",
+      "definition": [
+        {
+          "inventoryHistoryId": 1,
+          "previewsQty": 100,
+          "operationQty": 100,
+          "finalQty": 0,
+          "referenceId": 1,
+          "inventory": {
+            "inventoryId": 1
+          },
+          "operationModule": {
+            "catalogId": 10000
+          }
+        }
+      ]
+    },
+    {
+      "id": "authorizeByInventoryHistoryIdHistory",
+      "definition": [
+        {
+          "inventoryHistoryId": 1,
+          "previewsQty": 100,
+          "operationQty": 100,
+          "finalQty": 0,
+          "referenceId": 1,
+          "inventory": {
+            "inventoryId": 1
+          },
+          "operationModule": {
+            "catalogId": 10000
+          }
+        }
+      ]
+    },
+    {
+      "id": "authorizeByTxnHistoryAlt",
+      "definition": [
+        {
+          "inventoryHistoryId": 1,
+          "previewsQty": 100,
+          "operationQty": 100,
+          "finalQty": 0,
+          "referenceId": 1,
+          "inventory": {
+            "inventoryId": 1
+          },
+          "operationModule": {
+            "catalogId": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "rejectByTxnHistory",
+      "definition": [
+        {
+          "inventoryHistoryId": 1,
+          "previewsQty": 100,
+          "operationQty": 100,
+          "finalQty": 0,
+          "referenceId": 1,
+          "inventory": {
+            "inventoryId": 1
+          },
+          "operationModule": {
+            "catalogId": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "rejectByInventoryHistoryIdHistory",
+      "definition": [
+        {
+          "inventoryHistoryId": 1,
+          "previewsQty": 100,
+          "operationQty": 100,
+          "finalQty": 0,
+          "referenceId": 1,
+          "inventory": {
+            "inventoryId": 1
+          },
+          "operationModule": {
+            "catalogId": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "rejectByReferenceIdHistory",
+      "definition": [
+        {
+          "inventoryHistoryId": 1,
+          "previewsQty": 100,
+          "operationQty": 100,
+          "finalQty": 0,
+          "referenceId": 1,
+          "inventory": {
+            "inventoryId": 1
+          },
+          "operationModule": {
+            "catalogId": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "authorizeByTxnInventory",
+      "definition": {
+        "qty": 100
+      }
+    },
+    {
+      "id": "authorizeByInventoryHistoryIdInventory",
+      "definition": {
+        "qty": 100
+      }
+    },
+    {
+      "id": "authorizeHistory",
+      "definition": [
+        {
+          "inventoryHistoryId": 1,
+          "previewsQty": 100,
+          "operationQty": 100,
+          "finalQty": 0,
+          "referenceId": 1,
+          "inventory": {
+            "inventoryId": 1
+          },
+          "operationModule": {
+            "catalogId": 10001
+          }
+        }
+      ]
+    },
+    {
+      "id": "authorizeInventory",
+      "definition": {
+        "qty": 100
+      }
+    },
+    {
+      "id": "itemInventoryPerStoreNumberInventory",
+      "definition": [
+        {
+          "qty": 100,
+          "storeLocation": {
+            "storeNumber": {}
+          },
+          "upcMaster": {
+            "contentPerUnit": 1,
+            "contentPerUnitUom": {},
+            "inventoryUnit": {}
+          }
+        }
+      ]
+    },
+    {
+      "id": "inventoryByCodeAndStoreLocationProduct",
+      "definition": {
+        "upcMasterId": 1,
+        "upcMasterStatus": {
+          "catalogId": 30000
+        }
+      }
+    },
+    {
+      "id": "inventoryByCodeAndStoreLocationInventory",
+      "definition": {
+        "qty": 100
+      }
+    }
+  ]
+}

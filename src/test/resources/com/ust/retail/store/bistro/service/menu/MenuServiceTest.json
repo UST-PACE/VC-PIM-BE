@@ -1,0 +1,99 @@
+{
+  "objects": [
+    {
+      "id": "saveRequest",
+      "definition": {
+        "recipeId": 1,
+        "storeNumId": 1,
+        "weekDays": [
+          {
+            "day": 1,
+            "start": 0,
+            "end": 1000
+          }
+        ]
+      }
+    },
+    {
+      "id": "updateRequest",
+      "definition": {
+        "menuEntryId": 1,
+        "weekDays": [
+          {
+            "day": 1,
+            "start": 0,
+            "end": 1000
+          }
+        ]
+      }
+    },
+    {
+      "id": "menuModel",
+      "definition": {
+        "menuEntryId": 1,
+        "recipe": {
+          "recipeId": 1,
+          "relatedUpcMaster": {}
+        },
+        "store": {
+          "storeNumId": 1
+        },
+        "weekDays": [
+          {
+            "day": 1,
+            "start": 0,
+            "end": 1000
+          }
+        ]
+      }
+    },
+    {
+      "id": "menuModelNoDetail",
+      "definition": {
+        "menuEntryDayId": 1,
+        "day": 1,
+        "start": 0,
+        "end": 1000,
+        "menuEntry": {
+          "recipe": {
+            "relatedUpcMaster": {}
+          },
+          "store": {}
+        }
+      }
+    },
+    {
+      "id": "addRecipeRequest",
+      "definition": {
+        "recipeId": 1,
+        "menuId": 1
+      }
+    },
+    {
+      "id": "addRecipeDetails",
+      "definition": [
+        {
+          "recipe": {
+            "relatedUpcMaster": {
+              "salePrice": 10
+            }
+          },
+          "menu": {}
+        }
+      ]
+    },
+    {
+      "id": "menuDetail",
+      "definition": {
+        "recipe": {
+          "relatedUpcMaster": {
+            "salePrice": 10
+          }
+        },
+        "menu": {
+          "menuId": 1
+        }
+      }
+    }
+  ]
+}

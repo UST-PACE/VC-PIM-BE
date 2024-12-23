@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Mock Login</title>
+</head>
+<body>
+<h1>Login as:</h1>
+<ul th:each="role : ${loginOptions}">
+    <li><a href="" th:href="@{/mock-login/{role}(role=${role}, path=${path}, origin=${origin})}" >[[${role}]]</a></li>
+</ul>
+</body>
+</html>

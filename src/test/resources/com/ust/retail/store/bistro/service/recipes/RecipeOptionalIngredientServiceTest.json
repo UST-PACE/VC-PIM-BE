@@ -1,0 +1,29 @@
+{
+  "objects": [
+    {
+      "id": "recipes",
+      "definition": [
+        {
+          "recipeDetailId": 1,
+          "upcMaster": {},
+          "excludeName": "NAME"
+        }
+      ]
+    },
+    {
+      "id": "ingredient",
+      "definition": {
+        "recipeDetailId": 1,
+        "upcMaster": {},
+        "excludeName": "NAME"
+      }
+    },
+    {
+      "id": "saveRequest",
+      "definition": {
+        "recipeDetailId": 1,
+        "displayName": "NAME"
+      }
+    }
+  ]
+}

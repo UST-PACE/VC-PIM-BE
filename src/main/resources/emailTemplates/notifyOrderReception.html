@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <style th:inline="css">
+
+      body {
+          font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .header {
+          background-color: /*[[${customerBgColor}]]*/ black;
+          color: /*[[${customerFgColor}]]*/ white;
+          border-spacing: 0px;
+          padding: 0px;
+          width: 100%;
+
+      }
+
+      a:link, a:visited, a:hover {
+          color: black;
+      }
+
+      .detail {
+          width: 100%;
+      }
+
+      .detail th {
+          background-color: black;
+          color: white;
+          text-align: left;
+      }
+
+      span.info {
+          font-weight: bold;
+          font-style: italic;
+      }
+  </style>
+</head>
+<body>
+<table class="header">
+  <tr>
+    <td valign="middle"><H1>[[${customer}]] Purchase Order Received in
+      store</H1></td>
+    <td>&nbsp;</td>
+    <td><img th:src="${host} + '/assets/resources/logo.png'"/></td>
+  </tr>
+</table>
+<table>
+  <tr>
+    <td colspan="3">
+      <br>
+      <p>Dear <strong th:text="${driverName}">Driver</strong>,</p>
+
+      <!--/*@thymesVar id="po" type="com.ust.retail.store.pim.dto.inventory.reception.operation.ReceivingResumeResponseDTO"*/-->
+      <p>
+        This is to notify that Purchase Order
+        <span class="info" th:text="${po.purchaseOrderNumber}">PIM-0000000000-000</span> was received on
+        <span class="info" th:text="${#dates.format(po.receptionDate, 'dd/MM/yyyy HH:mm:ss')}">00/00/0000 00:00:00</span>
+        by
+        <span class="info" th:text="${po.receiverName}">Receiver name</span>.
+      </p>
+
+      <!--/*@thymesVar id="complete" type="java.util.List"*/-->
+      <table class="detail" th:unless="${#lists.isEmpty(complete)}">
+        <tr>
+          <th colspan="4" align="left">Complete Items</th>
+        </tr>
+        <tr style="background-color:black;color:white">
+          <th>Product</th>
+          <th>SKU</th>
+          <th>Required Qty.</th>
+          <th>Received Qty.</th>
+        </tr>
+        <!--/*@thymesVar id="detail" type="com.ust.retail.store.pim.dto.inventory.reception.operation.ReceivingResumeResponseDetailDTO"*/-->
+        <tr th:each="detail: ${complete}">
+          <td th:text="${detail.productName}">Product</td>
+          <td th:text="${detail.principalUPC}"></td>
+          <td th:text="${detail.requestedQty}"></td>
+          <td th:text="${#numbers.formatInteger(detail.receivedQty, 1)}"></td>
+        </tr>
+      </table>
+
+      <div th:if="${!#lists.isEmpty(incomplete) && !#lists.isEmpty(complete)}">
+        <br>
+        <hr>
+        <br>
+      </div>
+
+      <!--/*@thymesVar id="incomplete" type="java.util.List"*/-->
+      <table class="detail" th:unless="${#lists.isEmpty(incomplete)}">
+        <tr style="background-color:black;color:white">
+          <th colspan="5" align="left">Incomplete Items</th>
+        </tr>
+        <tr style="background-color:black;color:white">
+          <th>Product</th>
+          <th>SKU</th>
+          <th>Required Qty.</th>
+          <th>Received Qty.</th>
+          <th>Problems</th>
+        </tr>
+        <!--/*@thymesVar id="detail" type="com.ust.retail.store.pim.dto.inventory.reception.operation.ReceivingResumeResponseDetailDTO"*/-->
+        <tr th:each="detail: ${incomplete}">
+          <td th:text="${detail.productName}">Product</td>
+          <td th:text="${detail.principalUPC}"></td>
+          <td th:text="${detail.requestedQty}"></td>
+          <td th:text="${#numbers.formatInteger(detail.receivedQty, 1)}"></td>
+          <td>
+            <div th:each="problem: ${detail.receivingWarnings}">
+              <!--/*@thymesVar id="problem" type="com.ust.retail.store.pim.dto.inventory.reception.operation.ReceptionWarningDTO"*/-->
+              <span th:text="${problem.warningDesc}"></span> (<span
+                    th:text="${#numbers.formatInteger(problem.qty, 1)}"></span>)
+            </div>
+          </td>
+        </tr>
+      </table>
+      <p>
+        Feel free to contact us for any further clarifications.
+      </p>
+    </td>
+  </tr>
+</table>
+
+<div th:replace="footer :: links"></div>
+
+</body>
+</html>

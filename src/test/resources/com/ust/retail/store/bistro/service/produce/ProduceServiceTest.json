@@ -1,0 +1,226 @@
+{
+  "objects": [
+    {
+      "id": "produceRequest",
+      "definition": {
+        "dayOfTheWeek": 1,
+        "produceDetails": [
+          {
+            "recipeId": 1,
+            "requestedPortions": 1,
+            "availablePortions": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "produceIngredient",
+      "definition": {
+        "qty": 10,
+        "unit": {},
+        "upcMaster": {
+          "productTypeSellingUnit": {},
+          "productTypeBuyingUnit": {},
+          "contentPerUnit": 1,
+          "contentPerUnitUom": {},
+          "inventoryUnit": {}
+        }
+      }
+    },
+    {
+      "id": "weeklyProduceList",
+      "definition": [
+        {
+          "dayOfTheWeek": 1,
+          "prepSheetId": 1,
+          "recipeId": 1,
+          "recipeName": "Recipe 1",
+          "ingredientUpcMasterId": 1,
+          "ingredientName": "Ingredient 1",
+          "requiredOnPrepSheet": true,
+          "topping": false,
+          "portions": 10,
+          "ingredientQty": 5,
+          "recipePortionQty": 5,
+          "ingredientInventoryUnitId": 1,
+          "ingredientUnitId": 1,
+          "ingredientUnitName": "g"
+        },
+        {
+          "dayOfTheWeek": 2,
+          "prepSheetId": 2,
+          "recipeId": 1,
+          "recipeName": "Recipe 1",
+          "ingredientUpcMasterId": 1,
+          "ingredientName": "Ingredient 1",
+          "requiredOnPrepSheet": true,
+          "topping": false,
+          "portions": 10,
+          "ingredientQty": 5,
+          "recipePortionQty": 5,
+          "ingredientInventoryUnitId": 1,
+          "ingredientUnitId": 1,
+          "ingredientUnitName": "g"
+        },
+        {
+          "dayOfTheWeek": 1,
+          "prepSheetId": 1,
+          "recipeId": 2,
+          "recipeName": "Recipe 2",
+          "ingredientUpcMasterId": 1,
+          "ingredientName": "Ingredient 1",
+          "requiredOnPrepSheet": true,
+          "topping": false,
+          "portions": 10,
+          "ingredientQty": 5,
+          "recipePortionQty": 5,
+          "ingredientInventoryUnitId": 1,
+          "ingredientUnitId": 1,
+          "ingredientUnitName": "g"
+        },
+        {
+          "dayOfTheWeek": 1,
+          "prepSheetId": 1,
+          "recipeId": 2,
+          "recipeName": "Recipe 2",
+          "ingredientUpcMasterId": 2,
+          "ingredientName": "Ingredient 2",
+          "requiredOnPrepSheet": false,
+          "topping": false,
+          "portions": 10,
+          "ingredientQty": 5,
+          "recipePortionQty": 5,
+          "ingredientInventoryUnitId": 1,
+          "ingredientUnitId": 1,
+          "ingredientUnitName": "g"
+        },
+        {
+          "dayOfTheWeek": 2,
+          "prepSheetId": 2,
+          "recipeId": 2,
+          "recipeName": "Recipe 2",
+          "ingredientUpcMasterId": 2,
+          "ingredientName": "Ingredient 2",
+          "requiredOnPrepSheet": false,
+          "topping": false,
+          "portions": 10,
+          "ingredientQty": 5,
+          "recipePortionQty": 5,
+          "ingredientInventoryUnitId": 1,
+          "ingredientUnitId": 1,
+          "ingredientUnitName": "g"
+        },
+        {
+          "dayOfTheWeek": 3,
+          "prepSheetId": 3,
+          "recipeId": 3,
+          "recipeName": "Recipe 3",
+          "ingredientUpcMasterId": 3,
+          "ingredientName": "Ingredient 3",
+          "requiredOnPrepSheet": true,
+          "topping": true,
+          "portions": 10,
+          "ingredientQty": 5,
+          "recipePortionQty": 5,
+          "ingredientInventoryUnitId": 1,
+          "ingredientUnitId": 1,
+          "ingredientUnitName": "g"
+        }
+      ]
+    },
+    {
+      "id": "toppingRecipe",
+      "definition": {
+        "recipeId": 100,
+        "relatedUpcMaster": {
+          "productName": "Recipe 100",
+          "contentPerUnit": 1,
+          "contentPerUnitUom": {},
+          "inventoryUnit": {}
+        },
+        "numPieces": 1,
+        "details": [
+          {
+            "qty": 50,
+            "unit": {},
+            "upcMaster": {
+              "upcMasterId": 50,
+              "productName": "Ingredient 50",
+              "contentPerUnit": 1,
+              "contentPerUnitUom": {},
+              "inventoryUnit": {}
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "completePrepSheetRequest",
+      "definition": [
+        {
+          "prepSheetId": 1,
+          "items": [
+            {
+              "upcMasterId": 1
+            }
+          ]
+        },
+        {
+          "prepSheetId": 2,
+          "items": [
+            {
+              "upcMasterId": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prepSheetModel",
+      "definition": {
+        "prepSheetStatus": {
+          "catalogId": 23000
+        },
+        "dayOfTheWeek": 1,
+        "details": [
+          {
+            "recipe": {
+              "recipeId": 1,
+              "relatedUpcMaster": {
+                "upcMasterId": 1
+              }
+            },
+            "protion": 10
+          }
+        ]
+      }
+    },
+    {
+      "id": "completePrepSheetModel",
+      "definition": {
+        "prepSheetStatus": {
+          "catalogId": 23001
+        },
+        "dayOfTheWeek": 1,
+        "details": [
+          {
+            "recipe": {
+              "recipeId": 1,
+              "relatedUpcMaster": {
+                "upcMasterId": 1
+              }
+            },
+            "protion": 10
+          }
+        ]
+      }
+    },
+    {
+      "id": "product",
+      "definition": {
+        "productTypeSellingUnit": {},
+        "productTypeBuyingUnit": {}
+      }
+    }
+  ]
+}

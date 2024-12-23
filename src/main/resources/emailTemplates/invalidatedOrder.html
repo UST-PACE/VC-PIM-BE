@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <style th:inline="css">
+
+      body {
+          font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .header {
+          background-color: /*[[${customerBgColor}]]*/ black;
+          color: /*[[${customerFgColor}]]*/ white;
+          border-spacing: 0px;
+          padding: 0px;
+          width: 100%;
+
+      }
+
+      a:link, a:visited, a:hover {
+          color: black;
+      }
+  </style>
+</head>
+<body>
+<table class="header">
+  <tr>
+    <td valign="middle"><H1>[[${customer}]] Purchase Order Cancelled /
+      Modified</H1></td>
+    <td>&nbsp;</td>
+    <td><img th:src="${host} + '/assets/resources/logo.png'"/></td>
+  </tr>
+</table>
+<table>
+  <tr>
+    <td colspan="3">
+      <br>
+      <p>
+        Dear <strong th:text="${username}"></strong>,
+      </p>
+
+      <p>
+        This is to notify that Purchase Order <span th:text="${purchaseOrderNum}">PO Number</span> has been
+        cancelled
+        due to one of the following reasons:
+      </p>
+      <ul>
+        <li>New PO will be sent shortly</li>
+        <li>Change Of product description</li>
+        <li>New Vendor process</li>
+        <li>Change in Contract</li>
+        <li>Change in Lead time</li>
+        <li>Change in Price</li>
+        <li>Product modification</li>
+        <li>PO sent in error</li>
+      </ul>
+      <p>
+        Feel free to contact us for any further clarifications.
+      </p>
+      <p>
+        No further action is required.
+      </p>
+
+    </td>
+  </tr>
+</table>
+
+<div th:replace="footer :: links"></div>
+
+</body>
+</html>

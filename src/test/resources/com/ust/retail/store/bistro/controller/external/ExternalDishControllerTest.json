@@ -1,0 +1,17 @@
+{
+  "objects": [
+    {
+      "id": "externalDishList",
+      "definition": [
+        {
+          "productId": 1,
+          "productName": "Dish 1"
+        },
+        {
+          "productId": 2,
+          "productName": "Dish 2"
+        }
+      ]
+    }
+  ]
+}

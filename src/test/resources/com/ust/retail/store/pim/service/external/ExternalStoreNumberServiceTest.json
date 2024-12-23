@@ -1,0 +1,10 @@
+{
+  "objects": [
+    {
+      "id": "storeNumber",
+      "definition": {
+        "storeLocations": []
+      }
+    }
+  ]
+}

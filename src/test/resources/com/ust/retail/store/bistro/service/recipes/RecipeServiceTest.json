@@ -1,0 +1,193 @@
+{
+  "objects": [
+    {
+      "id": "updateRequest",
+      "definition": {
+        "recipeId": 1
+      }
+    },
+    {
+      "id": "updateNutritionalValuesRequest",
+      "definition": {
+        "recipeId": 1,
+        "nutritionalInfo": {
+          "calories": 0,
+          "fats":0,
+          "carbohydrates": 0,
+          "protein":0,
+          "sugar": 0
+        }
+      }
+    },
+    {
+      "id": "recipeModel",
+      "definition": {
+        "sellingUnit": {},
+        "mealTemperature": {},
+        "foodClassification": {},
+        "preparationArea": {},
+        "indirectCost": 0,
+        "bufferPricePercentage": 10,
+        "sellingPrice": 10,
+        "relatedUpcMaster": {
+          "principalUpc": "CODE",
+          "upcMasterType": {},
+          "brandOwner": {},
+          "productType": {},
+          "countryOfOrigin": {},
+          "productGroup": {},
+          "productCategory": {},
+          "productSubcategory": {},
+          "productItem": {},
+          "packageType": {},
+          "productTypeBuyingUnit": {},
+          "productTypeSellingUnit": {},
+          "contentPerUnitUom": {},
+          "inventoryUnit": {},
+          "upcMasterStatus": {},
+          "sectionType": {},
+          "upcSellingChannels": []
+        }
+      }
+    },
+    {
+      "id": "recipeDetails",
+      "definition": [
+        {
+          "topping": true,
+          "qty": 1,
+          "unit": {},
+          "ingredientType": {},
+          "recipe": {
+            "recipeId": 1
+          },
+          "upcMaster": {
+            "upcMasterId": 1,
+            "contentPerUnit": 1,
+            "contentPerUnitUom": {},
+            "inventoryUnit": {}
+          }
+        },
+        {
+          "topping": false,
+          "qty": 1,
+          "unit": {},
+          "ingredientType": {},
+          "recipe": {
+            "recipeId": 1
+          },
+          "upcMaster": {
+            "upcMasterId": 2,
+            "contentPerUnit": 1,
+            "contentPerUnitUom": {},
+            "inventoryUnit": {}
+          }
+        }
+      ]
+    },
+    {
+      "id": "vendorDetails",
+      "definition": {
+      }
+    },
+    {
+      "id": "byFiltersRequest",
+      "definition": {
+        "mealTemperatureId": 1
+      }
+    },
+    {
+      "id": "recipeList",
+      "definition": [
+        {
+          "sellingUnit": {},
+          "mealTemperature": {},
+          "foodClassification": {},
+          "preparationArea": {},
+          "indirectCost": 0,
+          "bufferPricePercentage": 10,
+          "sellingPrice": 10,
+          "relatedUpcMaster": {
+            "upcMasterType": {},
+            "brandOwner": {},
+            "productType": {},
+            "countryOfOrigin": {},
+            "productGroup": {},
+            "productCategory": {},
+            "productSubcategory": {},
+            "productItem": {},
+            "packageType": {},
+            "productTypeBuyingUnit": {},
+            "productTypeSellingUnit": {}
+          }
+        }
+      ]
+    },
+    {
+      "id": "addItemRequest",
+      "definition": {
+        "recipeId": 1
+      }
+    },
+    {
+      "id": "updateItemRequest",
+      "definition": {
+        "recipeDetailId": 1
+      }
+    },
+    {
+      "id": "recipeDetail",
+      "definition": {
+        "recipe": {
+          "recipeId": 1
+        }
+      }
+    },
+    {
+      "id": "recipeElements",
+      "definition": [
+        {
+          "upcMasterId": 1
+        },
+        {
+          "upcMasterId": 2
+        },
+        {
+          "upcMasterId": 3,
+          "topping": true
+        },
+        {
+          "upcMasterId": 4
+        },
+        {
+          "upcMasterId": 5
+        }
+      ]
+    },
+    {
+      "id": "product",
+      "definition": {
+        "principalUpc": "CODE",
+        "upcMasterType": {},
+        "brandOwner": {},
+        "productType": {
+          "catalogId": 1
+        },
+        "countryOfOrigin": {},
+        "productGroup": {},
+        "productCategory": {},
+        "productSubcategory": {},
+        "productItem": {},
+        "packageType": {},
+        "productTypeBuyingUnit": {},
+        "productTypeSellingUnit": {},
+        "contentPerUnitUom": {
+          "catalogId": 1
+        },
+        "inventoryUnit": {
+          "catalogId": 1
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "objects": [
+    {
+      "id": "recipes",
+      "definition": [
+        {
+          "preparationArea": {},
+          "details": [],
+          "relatedUpcMaster": {
+            "upcMasterId": 1,
+            "upcMasterType": {},
+            "productGroup": {},
+            "productCategory": {},
+            "productSubcategory": {},
+            "sectionType": {},
+            "upcSellingChannels": []
+          }
+        },
+        {
+          "preparationArea": {},
+          "details": [],
+          "relatedUpcMaster": {
+            "upcMasterId": 3,
+            "upcMasterType": {},
+            "productGroup": {},
+            "productCategory": {},
+            "productSubcategory": {},
+            "sectionType": {},
+            "upcSellingChannels": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "inventoryList",
+      "definition": [
+        {
+          "qty": 10,
+          "storeLocation": {},
+          "upcMaster": {
+            "upcMasterId": 1
+          }
+        },
+        {
+          "qty": 0,
+          "upcMaster": {
+            "upcMasterId": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "produceList",
+      "definition": [
+        {
+          "details": [
+            {
+              "recipe": {
+                "category": {
+                  "catalogId": 18001
+                },
+                "relatedUpcMaster": {
+                  "upcMasterId": 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "recipe",
+      "definition": {
+        "foodTypes": "",
+        "displayExternally": true,
+        "details": [],
+        "relatedUpcMaster": {
+          "upcMasterType": {},
+          "productGroup": {},
+          "productCategory": {},
+          "productSubcategory": {},
+          "sectionType": {},
+          "upcSellingChannels": []
+        }
+      }
+    }
+  ]
+}

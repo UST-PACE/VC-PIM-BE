@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <style th:inline="css">
+
+      body {
+          font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .header {
+          background-color: /*[[${customerBgColor}]]*/ black;
+          color: /*[[${customerFgColor}]]*/ white;
+          border-spacing: 0px;
+          padding: 0px;
+          width: 100%;
+
+      }
+
+      a:link, a:visited, a:hover {
+          color: black;
+      }
+  </style>
+</head>
+<body>
+<table class="header">
+  <tr>
+    <td valign="middle"><H1>New [[${customer}]] Purchase Order</H1></td>
+    <td>&nbsp;</td>
+    <td><img th:src="${host} + '/assets/resources/logo.png'"/></td>
+  </tr>
+</table>
+<table>
+  <tr>
+    <td colspan="3">
+      <br>
+      <p>
+        Dear <strong th:text="${username}"></strong>,
+      </p>
+
+      <p>
+        Please see attached PO# and confirm receipt, product availability, and delivery date based on PP.
+        Delivery address and appointment contacts are listed on the PO. If the order needs to be split across
+        deliveries
+        or carriers, please let me know before doing so. Let me know if you have any questions or concerns.
+      </p>
+
+    </td>
+  </tr>
+</table>
+
+<div th:replace="footer :: links"></div>
+
+</body>
+</html>

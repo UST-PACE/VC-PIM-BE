@@ -1,0 +1,98 @@
+{
+  "objects": [
+    {
+      "id": "storeManager",
+      "definition": {
+        "supportRedirectMail": "",
+        "qrCode": "1K5uRIv54k",
+        "customerId": "568abaf7f85c3a0a5d47fdda714cdabd0a5da675841e4953824a47a1909d1b9ebf1d2eb12d7ae41be079780d88da2d4ab44faa272a7bcb5ed8f00c52c6676b81",
+        "customer": {
+          "firstName": "Store",
+          "lastName": "Manager",
+          "mobileNumber": "",
+          "emailId": "storemanager@ust.com",
+          "active": true,
+          "smsOtpVerified": true,
+          "enablePushNotification": true,
+          "roleId": 1,
+          "poApprover": false
+        },
+        "access_token": "31a06284-26cd-4b55-95f3-0f891c819586",
+        "refresh_token": "08206761-c00c-434d-8a2a-c46399a97828",
+        "token_type": "bearer",
+        "expires_in": 3598
+      }
+
+    },
+    {
+      "id": "admin",
+      "definition": {
+        "supportRedirectMail": "",
+        "qrCode": "1K5uRIv54k",
+        "customerId": "568abaf7f85c3a0a5d47fdda714cdabd0a5da675841e4953824a47a1909d1b9ebf1d2eb12d7ae41be079780d88da2d4ab44faa272a7bcb5ed8f00c52c6676b81",
+        "customer": {
+          "firstName": "Super",
+          "lastName": "user",
+          "mobileNumber": "",
+          "emailId": "admin@ust.com",
+          "active": true,
+          "smsOtpVerified": true,
+          "enablePushNotification": true,
+          "roleId": 0,
+          "poApprover": false
+        },
+        "access_token": "31a06284-26cd-4b55-95f3-0f891c819587",
+        "refresh_token": "08206761-c00c-434d-8a2a-c46399a97828",
+        "token_type": "bearer",
+        "expires_in": 3598
+      }
+    },
+    {
+      "id": "bistroManager",
+      "definition": {
+        "supportRedirectMail": "",
+        "qrCode": "1K5uRIv54k",
+        "customerId": "568abaf7f85c3a0a5d47fdda714cdabd0a5da675841e4953824a47a1909d1b9ebf1d2eb12d7ae41be079780d88da2d4ab44faa272a7bcb5ed8f00c52c6676b81",
+        "customer": {
+          "firstName": "Bistro",
+          "lastName": "Manager",
+          "mobileNumber": "",
+          "emailId": "bistromanager@ust.com",
+          "active": true,
+          "smsOtpVerified": true,
+          "enablePushNotification": true,
+          "roleId": 2,
+          "poApprover": false
+        },
+        "access_token": "31a06284-26cd-4b55-95f3-0f891c819588",
+        "refresh_token": "08206761-c00c-434d-8a2a-c46399a97828",
+        "token_type": "bearer",
+        "expires_in": 3598
+      }
+    },
+    {
+      "id": "storeManagerVc",
+      "definition": {
+        "supportRedirectMail": "",
+        "qrCode": "1K5uRIv54k",
+        "customerId": "568abaf7f85c3a0a5d47fdda714cdabd0a5da675841e4953824a47a1909d1b9ebf1d2eb12d7ae41be079780d88da2d4ab44faa272a7bcb5ed8f00c52c6676b81",
+        "customer": {
+          "firstName": "Store",
+          "lastName": "ManagerVc",
+          "mobileNumber": "",
+          "emailId": "storemanagervc@ust.com",
+          "active": true,
+          "smsOtpVerified": true,
+          "enablePushNotification": true,
+          "roleId": 14,
+          "poApprover": false
+        },
+        "access_token": "31a06284-26cd-4b55-95f3-0f891c819500",
+        "refresh_token": "08206761-c00c-434d-8a2a-c46399a97800",
+        "token_type": "bearer",
+        "expires_in": 3598
+      }
+
+    }
+  ]
+}

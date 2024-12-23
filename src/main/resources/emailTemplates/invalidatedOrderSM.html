@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <style th:inline="css">
+
+      body {
+          font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .header {
+          background-color: /*[[${customerBgColor}]]*/ black;
+          color: /*[[${customerFgColor}]]*/ white;
+          border-spacing: 0px;
+          padding: 0px;
+          width: 100%;
+
+      }
+
+      a:link, a:visited, a:hover {
+          color: black;
+      }
+  </style>
+</head>
+<body>
+<table class="header">
+  <tr>
+    <td valign="middle"><H1>[[${customer}]] Purchase Order
+      invalidated</H1></td>
+    <td>&nbsp;</td>
+    <td><img th:src="${host} + '/assets/resources/logo.png'"/></td>
+  </tr>
+</table>
+<table>
+  <tr>
+    <td colspan="3">
+      <br>
+      <p>
+        Dear <strong th:text="${username}"></strong>,
+      </p>
+
+      <p>
+        Purchase Order <em th:text="${purchaseOrderNum}">PO#</em> was invalidated for <em
+              th:text="${vendorName}">Vendor</em>.
+      </p>
+
+      <p th:if="${vendorCreditModified}">
+        An amount of <em th:text="${#numbers.formatCurrency(creditAmount)}"></em> was restored to the Vendor
+        Credit.
+      </p>
+
+    </td>
+  </tr>
+</table>
+
+<div th:replace="footer :: links"></div>
+
+</body>
+</html>

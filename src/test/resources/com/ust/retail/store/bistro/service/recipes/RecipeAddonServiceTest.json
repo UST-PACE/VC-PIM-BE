@@ -1,0 +1,114 @@
+{
+  "objects": [
+    {
+      "id": "request",
+      "definition": {
+        "recipeId": 1,
+        "recipeAddOnId": 1
+      }
+    },
+    {
+      "id": "recipeModel",
+      "definition": {
+        "sellingUnit": {},
+        "mealTemperature": {},
+        "foodClassification": {},
+        "indirectCost": 0,
+        "bufferPricePercentage": 10,
+        "sellingPrice": 10,
+        "relatedUpcMaster": {
+          "principalUpc": "CODE",
+          "upcMasterType": {},
+          "brandOwner": {},
+          "productType": {},
+          "countryOfOrigin": {},
+          "productGroup": {},
+          "productCategory": {},
+          "productSubcategory": {},
+          "productItem": {},
+          "packageType": {},
+          "productTypeBuyingUnit": {},
+          "productTypeSellingUnit": {},
+          "contentPerUnitUom": {},
+          "inventoryUnit": {},
+          "contentPerUnit": 1
+        }
+      }
+    },
+    {
+      "id": "recipeAddOnTopping",
+      "definition": {
+        "recipe": {
+          "recipeId": 1
+        },
+        "upcMaster": {
+          "upcMasterId": 1,
+          "productTypeSellingUnit": {},
+          "productTypeBuyingUnit": {},
+          "contentPerUnitUom": {},
+          "inventoryUnit": {},
+          "contentPerUnit": 1,
+          "upcMasterType": {},
+          "brandOwner": {},
+          "productType": {},
+          "countryOfOrigin": {},
+          "productGroup": {},
+          "productCategory": {},
+          "productSubcategory": {},
+          "productItem": {},
+          "packageType": {},
+          "upcMasterStatus": {},
+          "sectionType": {},
+          "upcSellingChannels": []
+        }
+      }
+    },
+    {
+      "id": "toppingRecipe",
+      "definition": {
+        "category": {
+          "catalogId": 18000
+        },
+        "sellingPrice": 20
+      }
+    },
+    {
+      "id": "rmAddOnProduct",
+      "definition": {
+        "upcMasterId": 1,
+        "contentPerUnit": 1
+      }
+    },
+    {
+      "id": "rmRecipeElement",
+      "definition": {
+        "upcMasterId": 1
+      }
+    },
+    {
+      "id": "rmRecipeElement2",
+      "definition": {
+        "upcMasterId": 2
+      }
+    },
+    {
+      "id": "rmRecipeElement3",
+      "definition": {
+        "upcMasterId": 3
+      }
+    },
+    {
+      "id": "toppingRecipeElement",
+      "definition": {
+        "upcMasterId": 4,
+        "topping": true
+      }
+    },
+    {
+      "id": "addOnVendorDetails",
+      "definition": {
+        "supplierPrice": 10
+      }
+    }
+  ]
+}

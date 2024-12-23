@@ -1,0 +1,77 @@
+{
+  "objects": [
+    {
+      "id": "produceList",
+      "definition": [
+        {
+          "details": [
+            {
+              "produce": {},
+              "recipe": {
+                "mealTemperature": {},
+                "relatedUpcMaster": {
+                  "upcMasterId": 1
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "inventoryList",
+      "definition": [
+        {
+          "upcMaster": {
+            "upcMasterId": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "wastageRequest",
+      "definition": {
+        "details": [
+          {
+            "ingredientUpcMasterId": 1,
+            "wasteAmount": 10
+          }
+        ]
+      }
+    },
+    {
+      "id": "wastageRequestWholeDish",
+      "definition": {
+        "wholeDish": true,
+        "details": []
+      }
+    },
+    {
+      "id": "recipe",
+      "definition": {
+        "relatedUpcMaster": {}
+      }
+    },
+    {
+      "id": "wastage",
+      "definition": {
+      }
+    },
+    {
+      "id": "wastageWholeDish",
+      "definition": {
+        "wholeDish": true,
+        "recipe": {
+          "relatedUpcMaster": {}
+        }
+      }
+    },
+    {
+      "id": "tossRequest",
+      "definition": {
+        "recipeId": 1,
+        "portions": 10
+      }
+    }
+  ]
+}

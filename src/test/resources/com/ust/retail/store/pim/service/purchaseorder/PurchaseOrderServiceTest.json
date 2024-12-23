@@ -1,0 +1,434 @@
+{
+  "objects": [
+    {
+      "id": "purchaseOrderModel",
+      "definition": {
+        "purchaseOrderId": 1,
+        "purchaseOrderNum": "ORDER_NUM",
+        "vendorMaster": {
+          "vendorMasterId": 1,
+          "cutOffDay": 1,
+          "shipmentDay": 1,
+          "eta": 1,
+          "moq": 0,
+          "distributor": {},
+          "vendorCountry": {},
+          "shippingCountry": {},
+          "vendorContacts": []
+        },
+        "status": {
+          "catalogId": 301
+        },
+        "storeNumber": {
+          "storeNumId": 1
+        },
+        "userCreate": {
+          "storeNumber": {}
+        },
+        "vendorMoq": 0,
+        "appliedVendorCredit": 0
+      }
+    },
+    {
+      "id": "toApprovePurchaseOrderModel",
+      "definition": {
+        "purchaseOrderId": 1,
+        "purchaseOrderNum": "ORDER_NUM",
+        "vendorMaster": {
+          "vendorMasterId": 1,
+          "cutOffDay": 1,
+          "shipmentDay": 1,
+          "eta": 1,
+          "moq": 0,
+          "distributor": {},
+          "vendorCountry": {},
+          "shippingCountry": {},
+          "vendorContacts": []
+        },
+        "status": {
+          "catalogId": 301
+        },
+        "storeNumber": {
+          "storeNumId": 1
+        },
+        "userCreate": {
+          "storeNumber": {}
+        },
+        "vendorMoq": 0,
+        "appliedVendorCredit": 0,
+        "details": [
+          {
+            "originalCost": 1001,
+            "discount": 0,
+            "finalCost": 1001
+          }
+        ]
+      }
+    },
+    {
+      "id": "orderedPurchaseOrderModel",
+      "definition": {
+        "purchaseOrderId": 1,
+        "vendorMaster": {
+          "vendorMasterId": 1,
+          "cutOffDay": 1,
+          "shipmentDay": 1,
+          "eta": 1,
+          "moq": 0
+        },
+        "status": {
+          "catalogId": 302
+        },
+        "storeNumber": {
+          "storeNumId": 1
+        },
+        "userCreate": {
+          "storeNumber": {}
+        },
+        "vendorMoq": 0,
+        "appliedVendorCredit": 0
+      }
+    },
+    {
+      "id": "completePurchaseOrderModel",
+      "definition": {
+        "purchaseOrderId": 1,
+        "vendorMaster": {
+          "vendorMasterId": 1,
+          "cutOffDay": 1,
+          "shipmentDay": 1,
+          "eta": 1,
+          "moq": 0
+        },
+        "status": {
+          "catalogId": 303
+        },
+        "storeNumber": {
+          "storeNumId": 1
+        },
+        "userCreate": {
+          "storeNumber": {}
+        },
+        "vendorMoq": 0,
+        "appliedVendorCredit": 0
+      }
+    },
+    {
+      "id": "orderedPurchaseOrderModelWithVendorCredit",
+      "definition": {
+        "purchaseOrderId": 1,
+        "vendorMaster": {
+          "vendorMasterId": 1,
+          "cutOffDay": 1,
+          "shipmentDay": 1,
+          "eta": 1,
+          "moq": 0,
+          "vendorCredit": {
+            "availableCredit": 0
+          }
+        },
+        "status": {
+          "catalogId": 302
+        },
+        "storeNumber": {
+          "storeNumId": 1
+        },
+        "userCreate": {
+          "storeNumber": {}
+        },
+        "vendorMoq": 0,
+        "appliedVendorCredit": 10
+      }
+    },
+    {
+      "id": "purchaseOrderModelWithDetails",
+      "definition": {
+        "purchaseOrderId": 1,
+        "vendorMaster": {
+          "vendorMasterId": 1,
+          "cutOffDay": 1,
+          "shipmentDay": 1,
+          "eta": 1,
+          "moq": 0
+        },
+        "status": {
+          "catalogId": 301
+        },
+        "storeNumber": {
+          "storeNumId": 1
+        },
+        "userCreate": {
+          "storeNumber": {}
+        },
+        "vendorMoq": 0,
+        "details": [
+          {
+            "purchaseOrderDetailId": 1,
+            "unitsPerPallet": 0,
+            "unitsPerCase": 0,
+            "productCost": 1,
+            "discount": 0,
+            "productMoq": 0,
+            "purchaseOrder": {
+              "purchaseOrderId": 1
+            },
+            "upcMaster": {
+              "upcMasterId": 1,
+              "productType": {},
+              "productTypeBuyingUnit": {}
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "orderedPurchaseOrderModelWithDetails",
+      "definition": {
+        "purchaseOrderId": 1,
+        "vendorMaster": {
+          "vendorMasterId": 1,
+          "cutOffDay": 1,
+          "shipmentDay": 1,
+          "eta": 1,
+          "moq": 0
+        },
+        "status": {
+          "catalogId": 302
+        },
+        "storeNumber": {
+          "storeNumId": 1
+        },
+        "userCreate": {
+          "storeNumber": {}
+        },
+        "vendorMoq": 0,
+        "appliedVendorCredit": 0,
+        "details": [
+          {
+            "purchaseOrderDetailId": 1,
+            "unitsPerPallet": 0,
+            "unitsPerCase": 10,
+            "productCost": 1,
+            "discount": 0,
+            "productMoq": 0,
+            "finalCost": 10,
+            "promotionType": {
+              "catalogId": 6000
+            },
+            "promotionQty": 0.5,
+            "purchaseOrder": {
+              "purchaseOrderId": 1
+            },
+            "upcMaster": {
+              "productType": {},
+              "productTypeBuyingUnit": {}
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "details",
+      "definition": [
+        {
+          "purchaseOrderDetailId": 1,
+          "purchaseOrder": {},
+          "upcMaster": {
+            "productType": {},
+            "productTypeBuyingUnit": {}
+          }
+        }
+      ]
+    },
+    {
+      "id": "filterResult",
+      "definition": [
+        {
+          "purchaseOrderId": 1
+        }
+      ]
+    },
+    {
+      "id": "pendingFulfillmentFilterResult",
+      "definition": [
+        {
+          "purchaseOrderId": 1
+        }
+      ]
+    },
+    {
+      "id": "upcVendorDetailsModel",
+      "definition": {
+        "upcVendorDetailId": 1,
+        "unitsPerCase": 0,
+        "casesPerPallet": 0,
+        "moq": 1
+      }
+    },
+    {
+      "id": "activeUpcMaster",
+      "definition": {
+        "upcMasterId": 1,
+        "upcMasterStatus": {
+          "catalogId": 30000
+        }
+      }
+    },
+    {
+      "id": "promotionDTO",
+      "definition": {
+        "promotionTypeId": 6000,
+        "discount": 0.5
+      }
+    },
+    {
+      "id": "vendorMasterDTO",
+      "definition": {
+        "vendorName": "User Name",
+        "cutOffDay": 1,
+        "shipmentDay": 1,
+        "eta": 1,
+        "moq": 0
+      }
+    },
+    {
+      "id": "purchaseOrderSaveRequest",
+      "definition": {
+        "purchaseOrderId": 1,
+        "appliedVendorCredit": 0
+      }
+    },
+    {
+      "id": "salesRepresentative",
+      "definition": {
+        "email": "user@example.com",
+        "vendorContactName": "User Name",
+        "vendorType": {}
+      }
+    },
+    {
+      "id": "escalationContact",
+      "definition": {
+        "email": "user@example.com",
+        "vendorContactName": "User Name"
+      }
+    },
+    {
+      "id": "currentUserDetails",
+      "definition": {
+        "storeNumber": {},
+        "approver": false
+      }
+    },
+    {
+      "id": "approverCurrentUserDetails",
+      "definition": {
+        "storeNumber": {},
+        "privileges": [
+          {
+            "role": {
+              "roleId": 2
+            }
+          }
+        ],
+        "approver": true
+      }
+    },
+    {
+      "id": "purchaseOrderModifyStatusResultDTO",
+      "definition": {
+        "vendorMasterId": 1,
+        "storeNumId": 1,
+        "purchaseOrderNum": "ORDER_NUM"
+      }
+    },
+    {
+      "id": "upcMasterModel",
+      "definition": {
+        "upcMasterId": 1,
+        "principalUpc": "111-ALGO",
+        "productType": {},
+        "productTypeBuyingUnit": {},
+        "upcMasterStatus": {
+          "catalogId": 30000
+        }
+      }
+    },
+    {
+      "id": "approverUser",
+      "definition": {
+        "userId": 1,
+        "approver": true
+      }
+    },
+    {
+      "id": "user",
+      "definition": {
+        "userId": 1,
+        "approver": false
+      }
+    },
+    {
+      "id": "userDTO",
+      "definition": {
+        "userId": 1,
+        "approver": false,
+        "nameDesc": "Name"
+      }
+    },
+    {
+      "id": "addBulkCreateRequest",
+      "definition": {
+        "vendorMasterId": 1,
+        "storeNumId": 1,
+        "products": [
+          {
+            "upcMasterId": 1,
+            "totalAmount": 10
+          },
+          {
+            "upcMasterId": 2,
+            "totalAmount": 10
+          }
+        ]
+      }
+    },
+    {
+      "id": "addBulkUpdateRequest",
+      "definition": {
+        "purchaseOrderId": 1,
+        "vendorMasterId": 1,
+        "storeNumId": 1,
+        "products": [
+          {
+            "upcMasterId": 1,
+            "totalAmount": 10
+          },
+          {
+            "upcMasterId": 2,
+            "totalAmount": 10
+          }
+        ]
+      }
+    },
+    {
+      "id": "vendorProductList",
+      "definition": [
+        {
+          "upcMaster": {
+            "upcMasterId": 1,
+            "productType": {},
+            "productTypeBuyingUnit": {}
+          }
+        },
+        {
+          "upcMaster": {
+            "upcMasterId": 2,
+            "productType": {},
+            "productTypeBuyingUnit": {}
+          }
+        }
+      ]
+    }
+  ]
+}

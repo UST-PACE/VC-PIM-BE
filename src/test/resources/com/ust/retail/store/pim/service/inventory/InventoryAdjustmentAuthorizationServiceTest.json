@@ -1,0 +1,67 @@
+{
+  "objects": [
+    {
+      "id": "filterResults",
+      "definition": [
+        {
+          "inventoryAdjustmentId": 1,
+          "userCreate": {
+            "nameDesc": "USER"
+          },
+          "startTime": "2021-01-01T00:00:00",
+          "endTime": "2021-01-01T00:00:00",
+          "details": [],
+          "status": 1
+        }
+      ]
+    },
+    {
+      "id": "adjustment",
+      "definition": {
+        "storeLocation":
+        {
+          "storeNumber": {
+            "storeNumId": 1
+          }
+        },
+        "status": 1,
+        "details": [],
+        "shrinkages": []
+      }
+    },
+    {
+      "id": "request",
+      "definition": {
+        "adjustmentId": 1,
+        "lines": [
+          {
+            "txnNum": 1,
+            "adjustmentDetailId": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "detailsWithPending",
+      "definition": [
+        {
+          "statusId": 12001
+        },
+        {
+          "statusId": 12000
+        }
+      ]
+    },
+    {
+      "id": "details",
+      "definition": [
+        {
+          "statusId": 12000
+        },
+        {
+          "statusId": 12000
+        }
+      ]
+    }
+  ]
+}

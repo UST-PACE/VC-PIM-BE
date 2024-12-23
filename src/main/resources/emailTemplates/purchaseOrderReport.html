@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <style th:inline="css">
+
+      body {
+          font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .header {
+          background-color: /*[[${customerBgColor}]]*/ #d85129;
+          color: /*[[${customerFgColor}]]*/ white;
+          border-spacing: 0px;
+          padding: 0px;
+          width: 100%;
+
+      }
+
+      a:link, a:visited, a:hover {
+          color: black;
+      }
+
+      .tables table {
+          border: 1px solid;
+          border-collapse: collapse;
+      }
+
+      .tables td, .tables th {
+          border: 1px solid;
+          padding: 10px;
+      }
+
+      .tables th {
+          text-align: start;
+      }
+
+      .tables tbody td.number {
+          text-align: right;
+      }
+
+      .orders {
+          margin-top: 2em;
+      }
+
+      .orders table {
+          font-size: 1em;
+      }
+
+      .orders th {
+          background-color: #a0a0a0;
+          padding: .4em;
+      }
+
+      .orders tbody tr.even {
+          background-color: #cecece;
+      }
+
+      .orders tbody td {
+          text-align: center;
+      }
+
+      .orders tbody td.title {
+          text-align: left
+      }
+
+      .orders a {
+          color: black;
+      }
+
+      .footer {
+          background-color: #FFF;
+          color: white;
+          border-spacing: 0px;
+          padding: 10px;
+          width: 186px;
+          height: 42px;
+          text-align: left;
+      }
+  </style>
+</head>
+<body>
+<table class="header">
+  <tr>
+    <td valign="middle"><H1>[[${customer}]] Purchase Order Report</H1>
+    </td>
+    <td>&nbsp;</td>
+    <td><img th:src="${host} + '/assets/resources/logo.png'"/></td>
+  </tr>
+</table>
+
+
+<table style="width: 100%">
+  <tr>
+    <td>
+      <br>
+      <p>
+        Dear <strong data-th-text="${username}">Store Manager</strong>,
+      </p>
+
+      <p>
+        Here is the information relating to the stores' purchase orders:
+      </p>
+
+      <div th:each="report, reportRow: ${reports}">
+        <!--/*@thymesVar id="report" type="com.ust.retail.store.pim.dto.report.PurchaseOrderReportDTO"*/-->
+        <div class="tables" style="width: 100%">
+          <table style="margin: auto;">
+            <tr>
+              <th scope="row">Date</th>
+              <td th:text="${#dates.format(report.reportDate, 'MM/dd/YYYY')}">MM/dd/YYYY</td>
+
+              <th scope="row">Store</th>
+              <td th:text="${report.storeName}">Store Name</td>
+            </tr>
+            <tr>
+              <th scope="row">Week</th>
+              <td th:text="${#dates.format(report.reportDate, 'w')}">00</td>
+
+              <th scope="row">Store Manager</th>
+              <td th:text="${report.storeManager}">Store Manager</td>
+            </tr>
+          </table>
+        </div>
+        <div class="tables" style="margin-top: 20px">
+          <table>
+            <tr>
+              <th scope="row">Purchase Orders Drafted</th>
+              <td class="number" th:text="${#numbers.formatCurrency(report.amountOrdersDrafted)}">$
+                12,345.67
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">Purchase Orders Pending Approval</th>
+              <td class="number" th:text="${#numbers.formatCurrency(report.amountOrdersPendingApproval)}">
+                $ 12,345.67
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">Purchase Orders Ordered</th>
+              <td class="number" th:text="${#numbers.formatCurrency(report.amountOrdersOrdered)}">$
+                12,345.67
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">Purchase Orders Received</th>
+              <td class="number" th:text="${#numbers.formatCurrency(report.amountOrdersReceived)}">$
+                12,345.67
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">Purchase Orders WTD</th>
+              <td class="number" th:text="${#numbers.formatInteger(report.ordersWTD, 0)}">12,345</td>
+            </tr>
+            <tr>
+              <th scope="row">Purchase Orders MTD</th>
+              <td class="number" th:text="${#numbers.formatInteger(report.ordersMTD, 0)}">12,345</td>
+            </tr>
+          </table>
+        </div>
+        <div th:unless="${#lists.isEmpty(report.draftedList)}" class="tables" style="margin-top: 20px">
+          <h4>Purchase Orders Drafted</h4>
+          <table>
+            <thead>
+            <tr>
+              <th scope="col">PO Number</th>
+              <th scope="col">Vendor</th>
+              <th scope="col">Cost Price</th>
+              <th scope="col">Retail Price</th>
+              <th scope="col">Margin</th>
+              <th scope="col">Drafted by</th>
+              <th scope="col">Date Drafted</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!--/*@thymesVar id="draft" type="com.ust.retail.store.pim.dto.report.PurchaseOrderDraftedDTO"*/-->
+            <tr th:each="draft,row : ${report.draftedList}" th:class="${row.even} ? 'even' : ''">
+              <td th:text="${draft.purchaseOrderNum}">PO#</td>
+              <td th:text="${draft.vendorName}">Vendor</td>
+              <td class="number" th:text="${#numbers.formatCurrency(draft.cost)}">$ 12,345.67</td>
+              <td class="number" th:text="${#numbers.formatCurrency(draft.retailPrice)}">$ 12,345.67</td>
+              <td class="number" th:text="${#numbers.formatCurrency(draft.margin)}">$ 12,345.67</td>
+              <td th:text="${draft.draftedBy}">User</td>
+              <td th:text="${#dates.format(draft.draftedOn, 'MM/dd/YYYY')}">MM/dd/YYYY</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+        <div th:unless="${#lists.isEmpty(report.pendingApprovalList)}" class="tables" style="margin-top: 20px">
+          <h4>Purchase Orders Pending Approval</h4>
+          <table>
+            <thead>
+            <tr>
+              <th scope="col">PO Number</th>
+              <th scope="col">Vendor</th>
+              <th scope="col">Cost Price</th>
+              <th scope="col">Retail Price</th>
+              <th scope="col">Margin</th>
+              <th scope="col">Days pending</th>
+              <th scope="col">Drafted by</th>
+              <th scope="col">Date Drafted</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!--/*@thymesVar id="pending" type="com.ust.retail.store.pim.dto.report.PurchaseOrderPendingApprovalDTO"*/-->
+            <tr th:each="pending,row : ${report.pendingApprovalList}" th:class="${row.even} ? 'even' : ''">
+              <td th:text="${pending.purchaseOrderNum}">PO#</td>
+              <td th:text="${pending.vendorName}">Vendor</td>
+              <td class="number" th:text="${#numbers.formatCurrency(pending.cost)}">$ 12,345.67</td>
+              <td class="number" th:text="${#numbers.formatCurrency(pending.retailPrice)}">$ 12,345.67
+              </td>
+              <td class="number" th:text="${#numbers.formatCurrency(pending.margin)}">$ 12,345.67</td>
+              <td class="number" th:text="${#numbers.formatInteger(pending.daysPending, 0)}">12,345</td>
+              <td th:text="${pending.draftedBy}">User</td>
+              <td th:text="${#dates.format(pending.draftedOn, 'MM/dd/YYYY')}">MM/dd/YYYY</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+        <div th:unless="${#lists.isEmpty(report.orderedList)}" class="tables" style="margin-top: 20px">
+          <h4>Purchase Orders Ordered</h4>
+          <table>
+            <thead>
+            <tr>
+              <th scope="col">PO Number</th>
+              <th scope="col">Vendor</th>
+              <th scope="col">Cost Price</th>
+              <th scope="col">Retail Price</th>
+              <th scope="col">Margin</th>
+              <th scope="col">Days pending</th>
+              <th scope="col">Drafted by</th>
+              <th scope="col">Date Drafted</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!--/*@thymesVar id="ordered" type="com.ust.retail.store.pim.dto.report.PurchaseOrderOrderedDTO"*/-->
+            <tr th:each="ordered,row : ${report.orderedList}" th:class="${row.even} ? 'even' : ''">
+              <td th:text="${ordered.purchaseOrderNum}">PO#</td>
+              <td th:text="${ordered.vendorName}">Vendor</td>
+              <td class="number" th:text="${#numbers.formatCurrency(ordered.cost)}">$ 12,345.67</td>
+              <td class="number" th:text="${#numbers.formatCurrency(ordered.retailPrice)}">$ 12,345.67
+              </td>
+              <td class="number" th:text="${#numbers.formatCurrency(ordered.margin)}">$ 12,345.67</td>
+              <td class="number" th:text="${#numbers.formatInteger(ordered.daysPending, 0)}">12,345</td>
+              <td th:text="${ordered.draftedBy}">User</td>
+              <td th:text="${#dates.format(ordered.draftedOn, 'MM/dd/YYYY')}">MM/dd/YYYY</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+        <div th:unless="${#lists.isEmpty(report.receptionList)}" class="tables" style="margin-top: 20px">
+          <h4>Product Reception</h4>
+          <table>
+            <thead>
+            <tr>
+              <th scope="col">UPC</th>
+              <th scope="col">Product</th>
+              <th scope="col">Vendor</th>
+              <th scope="col">Qty</th>
+              <th scope="col">Cost Price</th>
+              <th scope="col">Retail Price</th>
+              <th scope="col">Margin</th>
+              <th scope="col">Received by</th>
+              <th scope="col">Date/Time Received</th>
+              <th scope="col">Status (Partial/Complete)</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!--/*@thymesVar id="reception" type="com.ust.retail.store.pim.dto.report.PurchaseOrderReceptionDTO"*/-->
+            <tr th:each="reception,row : ${report.receptionList}" th:class="${row.even} ? 'even' : ''">
+              <td th:text="${reception.upc}">UPC</td>
+              <td th:text="${reception.productName}">Product</td>
+              <td th:text="${reception.vendorName}">Vendor</td>
+              <td class="number" th:text="${#numbers.formatInteger(reception.qty, 0)}">12,345</td>
+              <td class="number" th:text="${#numbers.formatCurrency(reception.cost)}">$ 12,345.67</td>
+              <td class="number" th:text="${#numbers.formatCurrency(reception.retailPrice)}">$ 12,345.67
+              </td>
+              <td class="number" th:text="${#numbers.formatCurrency(reception.margin)}">$ 12,345.67</td>
+              <td th:text="${reception.receivedBy}">User</td>
+              <td th:text="${#dates.format(reception.receivedDate, 'MM/dd/YYYY')}">MM/dd/YYYY</td>
+              <td th:text="${reception.status}">Status</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+        <br>
+        <hr th:unless="${reportRow.last}">
+        <br>
+      </div>
+
+      <p>Up to date information is available <a href="/" th:href="${host} + '/#/reports/purchase-orders'">here</a>
+      </p>
+    </td>
+  </tr>
+</table>
+
+
+<div th:replace="footer :: links"></div>
+
+</body>
+</html>
