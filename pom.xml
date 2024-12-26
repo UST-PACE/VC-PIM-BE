@@ -115,12 +115,12 @@
 		</dependency>
 -->
 
-		<dependency>
+<!--		<dependency>
 			<groupId>com.evoluta.libraries</groupId>
 			<artifactId>email-sender</artifactId>
 			<version>1.0.3</version>
 		</dependency>
-
+-->
 
 		<dependency>
 			<groupId>org.projectlombok</groupId>
