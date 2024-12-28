@@ -8,9 +8,11 @@ pipeline {
     stages {
         stage('Git Checkout') {
             steps {
- 		  checkout scm
-//                checkout scmGit(branches: [[name: '*/maven']], extensions: [], userRemoteConfigs: [[credentialsId: 'github-laya', url: 'https://github.com/UST-PACE/VC-PIM-BE']])
+ 		script {
+		    //checkout scm
+                  checkout scmGit(branches: [[name: '*/maven']], extensions: [], userRemoteConfigs: [[credentialsId: 'github-laya', url: 'https://github.com/UST-PACE/VC-PIM-BE']])
             }
+	  }
         }
      
         stage('Checkout Az Repo') {
