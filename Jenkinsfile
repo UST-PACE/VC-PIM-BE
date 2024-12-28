@@ -25,7 +25,7 @@ pipeline {
        
         stage('Maven Build') {
             steps {
-                withMaven(globalMavenSettingsConfig: '', jdk: '', maven: 'maven_', mavenSettingsConfig: '3b011989-862e-453d-bbf6-65a3bd09218c', traceability: false) {
+                withMaven(globalMavenSettingsConfig: '', jdk: '', maven: 'mavem', mavenSettingsConfig: '', traceability: false) {
                         sh script: 'mvn dependency:resolve'
 			sh script: 'mvn clean install -U -DskipTests'
  
