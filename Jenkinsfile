@@ -1,8 +1,8 @@
 pipeline {
     agent any
-	environment {
+    environment {
         DOCKER_CREDENTIALS_ID = 'docker-hub-credentials'
-		DOCKER_IMAGE_NAME = 'layamoorthy170673/pim-be' 
+	DOCKER_IMAGE_NAME = 'layamoorthy170673/pim-be' 
         IMAGE_TAG = '1' 
     }
     stages {
