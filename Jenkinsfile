@@ -28,7 +28,7 @@ pipeline {
                 }
             }
         }
-		stage('Check and Install Buildah') {
+	stage('Check and Install Buildah') {
             steps {
                 script {
                     echo "Checking if Buildah is installed..."
@@ -46,10 +46,10 @@ pipeline {
         }
 
     	stage('Build and Push Image') {
-    		steps {
-       			 script {
+  	   steps {
+       	       script {
 
-					  echo "Building and pushing Docker image using Buildah..."
+	 	      echo "Building and pushing Docker image using Buildah..."
 					  // Build Docker image
                       withCredentials([usernameColonPassword(credentialsId: 'docker-hub-credentials', variable: 'REG_CREDS')]) {
                         sh 'buildah bud --no-cache --pull --force-rm --format docker --creds ${r"${REG_CREDS}"}' + " -t ${r"${DOCKER_IMAGE_NAME}"}:latest --iidfile iid ."
@@ -57,11 +57,11 @@ pipeline {
                         sh 'buildah push --rm --creds ${r"${REG_CREDS}"} $(cat iid) ' + " docker://docker.io/${r"${DOCKER_IMAGE_NAME}"}:latest"
                     
 					
-					   
-					}
-       			}
-  			}
-		}
+		   
+			}
+       		  }
+  	     }
+	}
         
     }
 }
