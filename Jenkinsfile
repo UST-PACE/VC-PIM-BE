@@ -18,7 +18,7 @@ pipeline {
         stage('Checkout Az Repo') {
             steps {
                 script {
-                   checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'azure-repo-laya', url: 'https://dev.azure.com/EmergingTechnologySolutions/Pim/_git/Pim_Backend']])
+                   checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'azure-repo-laya', url: 'https://EmergingTechnologySolutions@dev.azure.com/EmergingTechnologySolutions/Pim/_git/Pim_Frontend']])
                 }
             }
         } 
