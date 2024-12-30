@@ -48,7 +48,8 @@ pipeline {
 	 	      echo "Building and pushing Docker image using Buildah..."
 					  // Build Docker image
                       withCredentials([usernameColonPassword(credentialsId: 'docker-hub-credentials', variable: 'REG_CREDS')]) {
-                        sh 'buildah bud --no-cache --pull --force-rm --format docker --creds ${REG_CREDS}' + " -t ${DOCKER_IMAGE_NAME}:latest ."
+                        sh ls
+			sh 'buildah bud --no-cache --pull --force-rm --format docker --creds ${REG_CREDS}' + " -t ${DOCKER_IMAGE_NAME}:latest ."
 			sh 'buildah images --format "ImageID: {{.ID}} {{.Name}} {{.Tag}} {{.Digest}} {{.CreatedAt}} {{.Size}} {{.CreatedAtRaw}}" ' +  "${DOCKER_IMAGE_NAME}:latest"
                         sh 'buildah push --rm --creds ${r"${REG_CREDS}"} $(cat iid) ' + " docker://docker.io/${r"${DOCKER_IMAGE_NAME}"}:latest"
                     
