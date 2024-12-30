@@ -7,6 +7,7 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 
 # Install application dependencies
+RUN npm install -g pnpm
 RUN pnpm install
 
 # Copy the rest of the application code to the working directory
