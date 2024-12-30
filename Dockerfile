@@ -1,14 +1,16 @@
-# Use the official OpenJDK image as the base image
-FROM openjdk:11-jre-slim
+FROM node:21
 
-# Set the working directory inside the container
-WORKDIR /app
+# Set the working directory in the container
+WORKDIR /usr/src/app
 
-# Copy the WAR file from your local machine to the container
-COPY target/pim-1.0.0.war /app/pimfe.war
+# Copy contents to the working directory
+COPY . .
 
-# Expose the port the app will run on
-EXPOSE 8080
+# Install application dependencies
+RUN npm install
 
-# Run the Spring Boot application
-ENTRYPOINT ["java", "-jar", "pimfe.war"]
+# Create a non-root user to run the application
+USER node
+
+# Define the command to run your application
+CMD ["npm", "run", "start"]
