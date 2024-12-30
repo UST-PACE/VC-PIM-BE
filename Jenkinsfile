@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         DOCKER_CREDENTIALS_ID = 'docker-hub-credentials'
-	DOCKER_IMAGE_NAME = 'layamoorthy170673/pim-be' 
+	DOCKER_IMAGE_NAME = 'layamoorthy170673/pim-fe' 
         IMAGE_TAG = '1' 
     }
     stages {
@@ -23,15 +23,7 @@ pipeline {
             }
         } 
        
-        stage('Maven Build') {
-            steps {
-                withMaven(globalMavenSettingsConfig: '', jdk: '', maven: 'maven_', mavenSettingsConfig: '3b011989-862e-453d-bbf6-65a3bd09218c', traceability: false) {
-                        sh script: 'mvn dependency:resolve'
-			sh script: 'mvn clean install -U -DskipTests'
- 
-                }
-            }
-        }
+
 	stage('Check and Install Buildah') {
             steps {
                 script {
