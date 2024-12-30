@@ -18,8 +18,14 @@ pipeline {
         stage('Checkout Az Repo') {
             steps {
                 script {
+		   dir('temp_repo2') {
                    checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'azure-repo-laya', url: 'https://EmergingTechnologySolutions@dev.azure.com/EmergingTechnologySolutions/Pim/_git/Pim_Frontend']])
                 }
+		   sh '''
+                   cp -r temp_repo2/* .
+                   rm -rf temp_repo2
+                   '''
+	      }
             }
         } 
        
