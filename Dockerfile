@@ -5,10 +5,10 @@ FROM openjdk:11-jre-slim
 WORKDIR /app
 
 # Copy the WAR file from your local machine to the container
-COPY target/pim-1.0.0.war /app/pim.war
+COPY target/pim-1.0.0.war /app/pimfe.war
 
 # Expose the port the app will run on
 EXPOSE 8080
 
 # Run the Spring Boot application
-ENTRYPOINT ["java", "-jar", "pim.war"]
+ENTRYPOINT ["java", "-jar", "pimfe.war"]
