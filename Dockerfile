@@ -26,4 +26,4 @@ EXPOSE 8080
 USER node
 
 # Define the command to serve the Angular application
-CMD ["http-server", "dist"]
+CMD ["http-server", "dist", "-p", "8080"]
