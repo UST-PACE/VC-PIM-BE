@@ -57,7 +57,7 @@ pipeline {
 
 			sh 'buildah bud --no-cache --pull --force-rm --format docker --creds ${REG_CREDS}' + " -t ${DOCKER_IMAGE_NAME}:1.0.0 ."
 			sh 'buildah images --format "ImageID: {{.ID}} {{.Name}} {{.Tag}} {{.Digest}} {{.CreatedAt}} {{.Size}} {{.CreatedAtRaw}}" ' +  "${DOCKER_IMAGE_NAME}:latest"
-                        sh 'buildah push --rm --creds ${r"${REG_CREDS}"} $(cat iid) ' + " docker://docker.io/${r"${DOCKER_IMAGE_NAME}"}:latest"
+                        sh 'buildah push --rm --creds ${REG_CREDS} $(cat iid) ' + " docker://docker.io/${DOCKER_IMAGE_NAME}:latest"
                     
 					
 		   
